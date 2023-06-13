@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Auth\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+
+
+
+Route::get('/', [IndexController::class, 'index'])->name('home');
+
+Route::middleware('auth')->group(function () {
+
+});
+
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'show_login_page'])->name('login');
+    Route::post('/login_do', [AuthController::class, "login"])->name("login_do");
 });
