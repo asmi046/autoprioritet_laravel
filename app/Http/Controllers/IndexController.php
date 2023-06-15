@@ -9,12 +9,17 @@ use App\Services\TrinityPartsWS;
 
 class IndexController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
+
+        $search_str = $request->input('search');
+
         $service = new TrinityPartsWS(config('trinity.trinity_key'));
+        $result = [];
 
-        $result = $service->searchBrands('OC90');
-        dd($service, $result);
+        if (!empty($search_str)) {
+            $result = $service->searchBrands($search_str);
+        }
 
-        return view('index');
+        return view('index', ['brand' => $result, 'search' => $search_str ]);
     }
 }
