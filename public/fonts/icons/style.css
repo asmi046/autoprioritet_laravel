@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'ap';
+  src:  url('fonts/ap.eot?b7xek9');
+  src:  url('fonts/ap.eot?b7xek9#iefix') format('embedded-opentype'),
+    url('fonts/ap.ttf?b7xek9') format('truetype'),
+    url('fonts/ap.woff?b7xek9') format('woff'),
+    url('fonts/ap.svg?b7xek9#ap') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.pi::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ap' !important;
+
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ap_arrow:before {
+  content: "\e900";
+}
+.ap_burger:before {
+  content: "\e901";
+}
+.ap_cabinet:before {
+  content: "\e902";
+}
+.ap_car:before {
+  content: "\e903";
+}
+.ap_cart:before {
+  content: "\e904";
+}
+.ap_check:before {
+  content: "\e905";
+}
+.ap_close:before {
+  content: "\e906";
+}
+.ap_home:before {
+  content: "\e907";
+}
+.ap_like:before {
+  content: "\e908";
+}
+.ap_lins:before {
+  content: "\e909";
+}
+.ap_list:before {
+  content: "\e90a";
+}
+.ap_mail:before {
+  content: "\e90b";
+}
+.ap_oil:before {
+  content: "\e90c";
+}
+.ap_phone:before {
+  content: "\e90d";
+}
+.ap_pin:before {
+  content: "\e90e";
+}
+.ap_problem:before {
+  content: "\e90f";
+}
+.ap_rehab:before {
+  content: "\e910";
+}
+.ap_rehab_car:before {
+  content: "\e911";
+}
+.ap_scroll:before {
+  content: "\e912";
+}
+.ap_setting:before {
+  content: "\e913";
+}
+.ap_trash:before {
+  content: "\e914";
+}
+.ap_truck:before {
+  content: "\e915";
+}
+.ap_wheel:before {
+  content: "\e916";
+}

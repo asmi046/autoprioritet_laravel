@@ -29,8 +29,9 @@
         <meta name="_token" content="{{ csrf_token() }}">
 
         @vite([
+                'public/fonts/icons/style.css',
                 'resources/css/app.css',
-                'resources/js/app.js',
+                'resources/js/app.js'
         ])
 
 </head>
