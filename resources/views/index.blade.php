@@ -9,12 +9,12 @@
 <section class="w-full bg-sblack text-white px-1">
     <div class="w-11/12 max-w-7xl mx-auto flex justify-between">
 
-        <x-a-in-head icon="before:content-['\e90e'] hidden mr-auto md:block" hr="tel:+74712310799" text="г. Курск ул. Суворовская д. 15"></x-a-in-head>
-        <x-a-in-head icon="before:content-['\e90d'] hidden md:block" hr="tel:+74712310799" text="+7 (4712) 310-799"></x-a-in-head>
+        <x-a-in-head icon="ap_map_pin hidden mr-auto md:block" hr="tel:+74712310799" text="г. Курск ул. Суворовская д. 15"></x-a-in-head>
+        <x-a-in-head icon="ap_phone hidden md:block" hr="tel:+74712310799" text="+7 (4712) 310-799"></x-a-in-head>
 
         <div class="ml-auto">
-            <x-a-in-head icon="before:content-['\e905']" hr="" text="Регистрация"></x-a-in-head>
-            <x-a-in-head icon="before:content-['\e902']" hr="" text="Вход"></x-a-in-head>
+            <x-a-in-head icon="ap_check" hr="" text="Регистрация"></x-a-in-head>
+            <x-a-in-head icon="ap_cabinet" hr="" text="Вход"></x-a-in-head>
         </div>
     </div>
 </section>
@@ -30,15 +30,7 @@
             <div class="flex-1 flex lg:mx-3">
                 <form class="border-sgray border rounded-md overflow-hidden bg-slgray flex px-3 my-auto w-full" action="">
                     <input class="bg-transparent my-2 flex-1" type="text" name="search" value="{{$search}}" placeholder="Введите артикул, например STHD29016L1">
-                    <button class="pi before:content-['\e909'] w-1/6 relative
-                    before:top-0
-                    before:right-0
-                    before:h-full
-                    before:absolute
-                    before:text-sgray
-                    before:text-[32px]
-                    before:leading-[38px]
-                    "></button>
+                    <button class="pi ap_lins before:text-sgray before:text-2xl w-1/12 relative"></button>
                 </form>
             </div>
         </div>
