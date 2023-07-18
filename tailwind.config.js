@@ -10,6 +10,7 @@ module.exports = {
         colors: {
             sblack:'#333333',
             syellow: '#FFED00',
+            syellowinv: '#eada0b',
             slgray: '#F5F5F5',
             sgray: '#B4C5C5'
         },

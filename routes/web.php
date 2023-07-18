@@ -28,6 +28,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('guest')->group(function () {
+    Route::get('/register', [AuthController::class, 'show_register_page'])->name('register');
+    Route::post('/register_do', [AuthController::class, "register"])->name("register_do");
+
     Route::get('/login', [AuthController::class, 'show_login_page'])->name('login');
     Route::post('/login_do', [AuthController::class, "login"])->name("login_do");
 });

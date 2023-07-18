@@ -56,7 +56,7 @@
     </section>
 
     <section class="w-full">
-        <div class="w-11/12 max-w-7xl mx-auto flex flex-wrap max-h-16 h-16 justify-between my-1">
+        <div class="w-11/12 h-auto max-w-7xl mx-auto flex flex-wrap h-16 justify-between my-1">
             <div class="flex w-full justify-between h-16 lg:w-9/12">
                 <a class="w-1/5 h-full flex " href="#">
                     <img class="h-full lg:hidden" src="{{asset('img/logo_mini.svg')}}" alt="AutopRioritet.ru">
@@ -97,5 +97,14 @@
 
     @yield('content')
 
+    <section class="bg-sblack w-full">
+        <div class="w-11/12 max-w-7xl mx-auto flex flex-col justify-center py-3 lg:flex-row lg:justify-between">
+            <a class="mx-auto lg:mr-auto lg:ml-0" href="#">
+                <img src="{{asset('img/logo_white.svg')}}" alt="Автоприоритет">
+            </a>
+
+            <a class="my-auto text-white hover:underline mx-auto lg:ml-auto lg:mr-0" href="#">Политика конфиденциальности</a>
+        </div>
+    </section>
 </body>
 </html>
