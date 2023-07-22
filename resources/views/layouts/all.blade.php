@@ -49,8 +49,8 @@
             <x-a-in-head icon="ap_phone hidden md:block" hr="tel:+74712310799" text="+7 (4712) 310-799"></x-a-in-head>
 
             <div class="ml-auto">
-                <x-a-in-head icon="ap_check" hr="" text="Регистрация"></x-a-in-head>
-                <x-a-in-head icon="ap_cabinet" hr="" text="Вход"></x-a-in-head>
+                <x-a-in-head icon="ap_check" hr="{{route('register')}}" text="Регистрация"></x-a-in-head>
+                <x-a-in-head icon="ap_cabinet" hr="{{route('login')}}" text="Вход"></x-a-in-head>
             </div>
         </div>
     </section>
