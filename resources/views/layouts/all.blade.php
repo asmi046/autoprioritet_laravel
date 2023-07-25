@@ -49,14 +49,23 @@
             <x-a-in-head icon="ap_phone hidden md:block" hr="tel:+74712310799" text="+7 (4712) 310-799"></x-a-in-head>
 
             <div class="ml-auto">
-                <x-a-in-head icon="ap_check" hr="{{route('register')}}" text="Регистрация"></x-a-in-head>
-                <x-a-in-head icon="ap_cabinet" hr="{{route('login')}}" text="Вход"></x-a-in-head>
+                @auth('web')
+                    <x-a-in-head icon="ap_checklist" hr="{{route('kabinet')}}" text="Кабинет"></x-a-in-head>
+                    <x-a-in-head icon="ap_exit" hr="{{route('logout')}}" text="Выйти"></x-a-in-head>
+                @endauth
+
+                @guest
+                    <x-a-in-head icon="ap_check" hr="{{route('register')}}" text="Регистрация"></x-a-in-head>
+                    <x-a-in-head icon="ap_cabinet" hr="{{route('login')}}" text="Вход"></x-a-in-head>
+                @endguest
+
+
             </div>
         </div>
     </section>
 
     <section class="w-full">
-        <div class="w-11/12 h-auto max-w-7xl mx-auto flex flex-wrap h-16 justify-between my-1">
+        <div class="w-11/12 max-w-7xl mx-auto flex flex-wrap h-auto justify-between my-1">
             <div class="flex w-full justify-between h-16 lg:w-9/12">
                 <a class="w-1/5 h-full flex " href="#">
                     <img class="h-full lg:hidden" src="{{asset('img/logo_mini.svg')}}" alt="AutopRioritet.ru">
@@ -64,7 +73,7 @@
                 </a>
 
                 <div class="flex-1 flex lg:mx-3">
-                    <form class="border-sgray border rounded-md overflow-hidden bg-slgray flex px-3 my-auto w-full" action="">
+                    <form class="border-sgray border rounded-md overflow-hidden bg-slgray flex px-3 my-auto w-full" action="{{route('search')}}">
                         <input class="bg-transparent my-2 flex-1 outline-none" type="text" name="search" value="{{isset($search)?$search:""}}" placeholder="Введите артикул, например STHD29016L1">
                         <button class="pi ap_lins before:text-sgray before:text-2xl w-1/12 relative"></button>
                     </form>

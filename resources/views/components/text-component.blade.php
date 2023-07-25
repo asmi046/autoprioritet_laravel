@@ -7,6 +7,9 @@
         value="{{isset($value)?$value:""}}">
 </div>
 
-@error($name)
-            <p class="form_error">{{$message}}</p>
-@enderror
+@isset($name)
+    @error($name)
+    <p class="bg-red-400 px-3 py-1 text-white rounded-md mb-4 text-xs">{{$message}}</p>
+    @enderror
+@endisset
+

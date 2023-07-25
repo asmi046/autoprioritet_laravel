@@ -45,7 +45,7 @@ class AuthController extends Controller
 
 
         if(auth('web')->attempt($user_data)) {
-            return redirect(route('home'));
+            return redirect(route('kabinet'));
         }
 
         return redirect(route('login'))->withErrors(['email'=>'Неверный логин или пароль']);
@@ -71,8 +71,8 @@ class AuthController extends Controller
     public function register(Request $request) {
         $user_data = $request->validate([
             'name' => ['required', 'string'],
-            'phone' => ['required', 'string'],
-            'email' => ['email', 'string', 'unique:users,email'],
+            'phone' => ['required', 'string', 'unique:users,phone', 'size:16'],
+            'email' => ['email', 'unique:users,email'],
             'password' => ['required','confirmed'],
         ]);
 

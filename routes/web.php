@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CabinetController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +26,16 @@ use App\Http\Controllers\Auth\AuthController;
 Route::get('/', [IndexController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
-
+    Route::get('/kabinet', [CabinetController::class, 'index'])->name('kabinet');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 Route::middleware('guest')->group(function () {
+
+
+
+    Route::get('/search', [SearchController::class, 'index'])->name('search');
+
     Route::get('/register', [AuthController::class, 'show_register_page'])->name('register');
     Route::post('/register_do', [AuthController::class, "register"])->name("register_do");
 
