@@ -19,26 +19,9 @@ use App\Http\Controllers\SearchController;
 */
 
 
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
-
-
-
-Route::get('/', [IndexController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/kabinet', [CabinetController::class, 'index'])->name('kabinet');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-});
-
-Route::middleware('guest')->group(function () {
-
-
-
-    Route::get('/search', [SearchController::class, 'index'])->name('search');
-
-    Route::get('/register', [AuthController::class, 'show_register_page'])->name('register');
-    Route::post('/register_do', [AuthController::class, "register"])->name("register_do");
-
-    Route::get('/login', [AuthController::class, 'show_login_page'])->name('login');
-    Route::post('/login_do', [AuthController::class, "login"])->name("login_do");
 });

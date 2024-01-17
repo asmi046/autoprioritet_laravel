@@ -1,14 +1,14 @@
 @extends('layouts.all')
 
+@php
+    $title = "";
+    $description = "";
+@endphp
 
-@section('title', "Автозапчасти в наличии и под заказ - AutopRioritet.ru")
-@section('description', "Автозапчасти в наличии и под заказ - AutopRioritet.ru")
+@section('title', $title)
+@section('description', $description)
 
-@section('content')
-
-
-<x-page-section fullh="true">
-
-</x-page-section>
+@section('main')
 
 @endsection
+

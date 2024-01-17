@@ -1,17 +1,55 @@
 @extends('layouts.all')
 
+@php
+    $title = "Авторизия";
+    $description = "Страница авторизации";
+@endphp
 
-@section('title', "Авторизация в on-line сервисе - AutopRioritet.ru")
-@section('description', "Авторизация в on-line сервисе - AutopRioritet.ru")
+@section('title', $title)
+@section('description', $description)
 
-@section('content')
-    <x-page-section fullh="true">
-        <form class="w-80 mx-auto shadow-md p-5 rounded-md" method="post" action="{{route('login_do')}}">
-            <h1 class="text-xl font-bold mb-4">Войти в кабинет</h1>
+@section('main')
+
+<section class="section">
+    <div class="container is-fullhd">
+
+        <form action="{{route('login_do')}}" method="post" class="box start-form">
             @csrf
-            <x-text-component type="text" placeholder="e-mail*" name="email" value="{{old('email')}}"></x-text-component>
-            <x-text-component type="password" placeholder="Пароль*" name="password" value=""></x-text-component>
-            <x-button-component>Войти</x-button-component>
+
+            <header>
+
+            </header>
+
+            <div class="field">
+              <label class="label">E-mail</label>
+              <div class="control">
+                <input name="email" class="input" type="email" placeholder="e.g. alex@example.com">
+              </div>
+
+              @error('email')
+                <p class="error">{{$message}}</p>
+              @enderror
+            </div>
+
+            <div class="field">
+              <label class="label">Пароль</label>
+              <div class="control">
+                <input name="password" class="input" type="password" placeholder="********">
+              </div>
+
+              @error('password')
+                  <p class="error">{{$message}}</p>
+              @enderror
+            </div>
+
+            <footer>
+                <button type="submit" class="button ">Войти</button>
+                <a class="button" href="#">Забыл пароль?</a>
+            </footer>
+
         </form>
-    </x-page-section>
+    </div>
+</section>
+
 @endsection
+
