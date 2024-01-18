@@ -33,6 +33,18 @@
 </head>
 <body>
     <main id="main">
+        <section class="top_info_section">
+            <div class="container">
+                <span class="adres"></span>
+                <span class="phone"></span>
+
+                <x-a-icon href="#" icon="gg-user">Регистрация</x-a-icon>
+
+                <a href="#">Вход</a>
+
+            </div>
+        </section>
+
         @yield('main')
     </main>
 </body>
