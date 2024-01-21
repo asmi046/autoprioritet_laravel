@@ -6,6 +6,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CabinetController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SearchTovarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ use App\Http\Controllers\SearchController;
 
 
 Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/search-tovar/{brand}/{article}', [SearchTovarController::class, 'index'])->name('search-tovar');
 
 
 Route::middleware('auth')->group(function () {

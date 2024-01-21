@@ -1,0 +1,18 @@
+.blk_information {
+    display: flex;
+    flex-direction: column;
+    h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .params{
+        display: flex;
+        justify-content: start;
+
+        p{
+            margin-right: 20px;
+        }
+    }
+}

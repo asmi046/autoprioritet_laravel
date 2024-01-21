@@ -10,5 +10,11 @@
 
 @section('main')
 
+    <section class="main_page_section">
+        <div class="container">
+
+        </div>
+    </section>
+
 @endsection
 

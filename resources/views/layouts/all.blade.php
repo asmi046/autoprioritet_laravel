@@ -54,13 +54,13 @@
         <section class="search_section">
             <div class="container">
                 <div class="search_line">
-                    <a href="#" class="logo">
+                    <a href="{{route('home')}}" class="logo">
                         <img src="{{asset('img/logo.svg')}}" alt="">
                     </a>
 
-                    <form action="" method="GET" class="main_search_form">
+                    <form action="{{ route('search') }}" method="GET" class="main_search_form">
                         <div class="search_input">
-                            <input type="text">
+                            <input name="search" type="text" value="{{ isset($_REQUEST['search'])?$_REQUEST['search']:"" }}" placeholder="Введите номер детали например: STHD29016L1">
                             <button type="submit"><i class="pi ap_lins"></i></button>
                         </div>
 
@@ -68,7 +68,7 @@
 
                     <div class="bascet_control">
                         <a class="buscrt_in_head" href="#">
-                            <span>Корзина</span>|<span class="counter">0</span>
+                            <span>Корзина</span> | <span class="counter">0</span>
                         </a>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
 
         <footer>
             <div class="container">
-                <a href="#" class="logo">
+                <a href="{{route('home')}}" class="logo">
                     <img src="{{asset('img/logo_white.svg')}}" alt="">
                 </a>
 

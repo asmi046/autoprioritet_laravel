@@ -1,0 +1,39 @@
+details {
+    display: flex;
+    margin-bottom: 20px;
+
+    summary{
+        list-style: none;
+        border: 1px solid $gray_border_color;
+        padding: 20px  50px 20px 30px;
+        background-color: $main_color;
+        border-radius: $border_rad;
+        position: relative;
+
+        cursor: pointer;
+
+        &::before{
+            content: "\e902";
+            background-color: white;
+            position: absolute;
+            border-radius: 30px;
+            width:30px;
+            height:30px;
+            right: 10px;
+            top: calc(50% - 15px);
+            text-align: center;
+            line-height: 30px!important;
+        }
+    }
+
+    &[open] summary{
+        background-color: $hover_color;
+        margin-bottom: 20px;
+    }
+
+    &[open] summary:before{
+        content: "\e902";
+        transform: rotate(90deg);
+    }
+
+}
