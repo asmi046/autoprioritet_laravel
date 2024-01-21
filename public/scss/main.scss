@@ -1,4 +1,3 @@
-@import url('../../node_modules/css.gg/icons/icons.scss');
 @import "vars";
 @import "null";
 @import "fonts";
@@ -9,9 +8,10 @@
 
 body{
     font-family: $main_fonts;
-    font-size: 14px;
+    font-size: 16px;
 }
 
+footer,
 section{
     width: 100%;
     padding-top: $section_space;
@@ -24,18 +24,5 @@ section{
     margin: 0 auto;
 }
 
-
-.top_info_section {
-    background-color: $black_color;
-    color:white;
-    padding: 5px 0;
-
-    a{
-        color:white;
-    }
-
-    .container {
-        display: flex;
-
-    }
-}
+@import "header";
+@import "footer";

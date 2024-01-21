@@ -1,0 +1,69 @@
+
+.top_info_section {
+
+    background-color: $black_color;
+    color:white;
+    padding: 5px 0;
+
+    a{
+        color:white;
+    }
+
+    .container {
+        display: flex;
+        display: flex;
+        justify-content: space-between;
+
+        .cabinet_controll  {
+            a:first-child {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.search_line {
+    display: flex;
+    justify-content: space-between;
+
+    .main_search_form {
+        flex: 1;
+        margin: auto 30px 0 30px;
+    }
+
+    .logo{
+        display: flex;
+        img{
+            margin-top: auto;
+        }
+    }
+
+    .bascet_control {
+        margin-top: auto;
+        .buscrt_in_head {
+            display: inline-block;
+            background-color: $main_color;
+            border: 1px solid $main_color;
+            height: 35px;
+            line-height: 35px;
+            padding: 0 20px;
+            border-radius: 5px;
+        }
+
+        .buscrt_in_head:hover {
+            background-color: $hover_color;
+        }
+    }
+}
+
+
+.menu_section {
+    background-color: $main_color;
+    padding: 10px 0;
+
+    nav{
+        a {
+            margin-right: 20px;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+footer {
+    background-color: $black_color;
+    color: white;
+
+    & *{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    a{
+        color: white;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+

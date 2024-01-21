@@ -26,6 +26,7 @@
     <meta name="_token" content="{{ csrf_token() }}">
 
     @vite([
+        'public/fonts/icons/style.css',
         'resources/css/app.css',
         'resources/js/app.js',
         'public/scss/main.scss'
@@ -35,17 +36,72 @@
     <main id="main">
         <section class="top_info_section">
             <div class="container">
-                <span class="adres"></span>
-                <span class="phone"></span>
+                <div class="adres">
+                    <x-a-icon href="#" icon="pi ap_map_pin">г. Курск ул. Суворовская д. 15</x-a-icon>
+                </div>
 
-                <x-a-icon href="#" icon="gg-user">Регистрация</x-a-icon>
+                <div class="phone">
+                    <x-a-icon href="tel:+74712310799" icon="pi ap_phone">+7 (4712) 310-799</x-a-icon>
+                </div>
 
-                <a href="#">Вход</a>
-
+                <div class="cabinet_controll">
+                    <x-a-icon href="#" icon="pi ap_note">Регистрация</x-a-icon>
+                    <x-a-icon href="#" icon="pi ap_cabinet">Вход</x-a-icon>
+                </div>
             </div>
         </section>
 
+        <section class="search_section">
+            <div class="container">
+                <div class="search_line">
+                    <a href="#" class="logo">
+                        <img src="{{asset('img/logo.svg')}}" alt="">
+                    </a>
+
+                    <form action="" method="GET" class="main_search_form">
+                        <div class="search_input">
+                            <input type="text">
+                            <button type="submit"><i class="pi ap_lins"></i></button>
+                        </div>
+
+                    </form>
+
+                    <div class="bascet_control">
+                        <a class="buscrt_in_head" href="#">
+                            <span>Корзина</span>|<span class="counter">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu_section">
+            <div class="container">
+                <nav>
+                    <a href="#">Информация по подбору</a>
+                    <a href="#">Контакты</a>
+                </nav>
+            </div>
+        </section>
+
+
         @yield('main')
+
+        <footer>
+            <div class="container">
+                <a href="#" class="logo">
+                    <img src="{{asset('img/logo_white.svg')}}" alt="">
+                </a>
+
+                <div class="policy">
+                    <x-a-icon href="#" icon="pi ap_checklist">Политика в области защиты персональных данных</x-a-icon>
+                </div>
+
+                <div class="copuright">
+                    ©АвтоПриоритет
+                </div>
+            </div>
+        </footer>
     </main>
 </body>
 </html>
