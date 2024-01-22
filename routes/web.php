@@ -25,5 +25,5 @@ Route::get('/search-tovar/{brand}/{article}', [SearchTovarController::class, 'in
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/kabinet', [CabinetController::class, 'index'])->name('kabinet');
+    Route::get('/cabinet', [CabinetController::class, 'index'])->name('cabinet');
 });

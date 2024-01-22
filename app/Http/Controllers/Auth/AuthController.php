@@ -45,7 +45,7 @@ class AuthController extends Controller
 
 
         if(auth('web')->attempt($user_data)) {
-            return redirect(route('kabinet'));
+            return redirect(route('cabinet'));
         }
 
         return redirect(route('login'))->withErrors(['email'=>'Неверный логин или пароль']);
