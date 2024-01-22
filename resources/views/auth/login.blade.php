@@ -10,9 +10,11 @@
 
 @section('main')
 
-<section class="section">
+<section class="section main_page_section">
     <div class="container is-fullhd">
 
+        <h1>Авторизация</h1>
+        <p class="mb_20">Авторизуйтесь в нашем магазине и получите персональную скидку</p>
         <form action="{{route('login_do')}}" method="post" class="box start-form">
             @csrf
 
@@ -21,7 +23,7 @@
             </header>
 
             <div class="field">
-              <label class="label">E-mail</label>
+              <label class="label">E-mail<span class="required">*</span></label>
               <div class="control">
                 <input name="email" class="input" type="email" placeholder="e.g. alex@example.com">
               </div>
@@ -32,7 +34,7 @@
             </div>
 
             <div class="field">
-              <label class="label">Пароль</label>
+              <label class="label">Пароль<span class="required">*</span></label>
               <div class="control">
                 <input name="password" class="input" type="password" placeholder="********">
               </div>

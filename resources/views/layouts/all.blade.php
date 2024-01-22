@@ -45,8 +45,9 @@
                 </div>
 
                 <div class="cabinet_controll">
-                    <x-a-icon href="#" icon="pi ap_note">Регистрация</x-a-icon>
-                    <x-a-icon href="#" icon="pi ap_cabinet">Вход</x-a-icon>
+
+                    <x-a-icon href="{{ route('login') }}" icon="pi ap_cabinet">Вход</x-a-icon>
+                    <x-a-icon href="{{ route('register') }}" icon="pi ap_note">Регистрация</x-a-icon>
                 </div>
             </div>
         </section>

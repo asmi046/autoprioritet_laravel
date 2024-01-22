@@ -9,6 +9,7 @@
 body{
     font-family: $main_fonts;
     font-size: 16px;
+    color:$black_color;
 }
 
 footer,
@@ -24,6 +25,7 @@ section{
     margin: 0 auto;
 }
 
+@import "standart";
 @import "header";
 @import "main_page_section";
 @import "footer";
