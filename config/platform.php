@@ -203,7 +203,7 @@ return [
      */
 
     'icons' => [
-        'bs'  => \Orchid\Support\BootstrapIconsPath::getFolder(),
+        // 'bs'  => \Orchid\Support\BootstrapIconsPath::getFolder(),
     ],
 
     /*
