@@ -25,8 +25,22 @@ section{
     margin: 0 auto;
 }
 
+.last_search_line {
+    a {
+        display: inline-block;
+        font-size: 14px;
+        margin-right:  20px;
+        border-bottom: 1px dotted $black_color;
+
+        &:hover{
+            border: none;
+        }
+    }
+}
+
 @import "standart";
 @import "header";
 @import "main_page_section";
 @import "footer";
 @import "search-page";
+@import "materials-page";
