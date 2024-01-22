@@ -13,6 +13,7 @@
     <section class="last_serch_section main_page_section">
         <div class="container">
             <h1 class="mt_0">Личный кабинет</h1>
+            <x-a-icon href="{{ route('logout') }}" icon="pi ap_arrow_curve">Выход</x-a-icon>
         </div>
     </section>
 
