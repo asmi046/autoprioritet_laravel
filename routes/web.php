@@ -8,6 +8,8 @@ use App\Http\Controllers\CabinetController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SearchTovarController;
 
+use App\Http\Controllers\SenderConsultController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,7 @@ use App\Http\Controllers\SearchTovarController;
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/search-tovar/{brand}/{article}', [SearchTovarController::class, 'index'])->name('search-tovar');
 
+Route::post('/send_consult', [SenderConsultController::class, "send_consultation"])->name('send_consultation');
 
 Route::middleware('auth')->group(function () {
     Route::get('/cabinet', [CabinetController::class, 'index'])->name('cabinet');

@@ -5,8 +5,14 @@
 @section('description', "Поиск запчасти по артикулу " . $search . ". Доставка запчастей в Курске от 1-го дня по выгодным ценам - AutopRioritet.ru")
 
 @section('main')
+<section class="breadcrumbs_section">
+    <div class="container">
+        <x-breadcrumbs :title="'Поиск запчасти по артикулу: '.$search"></x-breadcrumbs>
+    </div>
+</section>
 
-<section class="main_page_section">
+
+<section class="inner_page_section">
     <div class="container">
         @if (!empty($brand))
             <h1>Поиск запчасти по артикулу: {{ $search }}</h1>
@@ -23,6 +29,7 @@
 
                 <tbody>
                     @foreach ($brand['data'] as $item)
+                    @continue(empty($item['producer']))
                     <tr>
                         <td>{{$item['article']}}</td>
                         <td>{{$item['producer']}}</td>

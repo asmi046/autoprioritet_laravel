@@ -6,20 +6,30 @@
 
 @section('main')
 
-<section class="main_page_section">
+<section class="breadcrumbs_section">
+    <div class="container">
+        <x-breadcrumbs :article="$article" :brand="$brand"></x-breadcrumbs>
+    </div>
+</section>
+
+<section class="inner_page_section">
     <div class="container">
 
         <h1>Запчасти: {{ $article }} - {{ $brand }}</h1>
 
-        <x-product-table.details
-        :isopen="true"
-        :brand="'Запрашиваемый бренд:'.$brand"
-        :tovar="$tovars[$brand]"
-        ></x-product-table.details>
 
-        <h2>Найденные аналоги</h2>
 
         @if (!empty($tovars))
+            <x-product-table.details
+            :isopen="true"
+            :brand="'Запрашиваемый бренд:'.$brand"
+            :tovar="$tovars[$brand]"
+            ></x-product-table.details>
+
+            @if (count($tovars) > 1)
+                <h2>Найденные аналоги</h2>
+            @endif
+
             @foreach ($tovars as $key => $item)
                 @continue($key == $brand)
 
@@ -30,9 +40,11 @@
                 ></x-product-table.details>
             @endforeach
         @else
-            <h2>Введите артикул для поиска</h2>
+            <h2>К сожалению товары не найдены</h2>
         @endif
     </div>
 </section>
+
+<x-consultation-form.form></x-consultation-form.form>
 
 @endsection

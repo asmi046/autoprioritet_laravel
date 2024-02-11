@@ -19,6 +19,8 @@ class SearchController extends Controller
             $result = $service->searchBrands($search_str);
         }
 
+        // dd($result, $search_str);
+
         return view('search', ['brand' => $result, 'search' => $search_str ]);
     }
 }

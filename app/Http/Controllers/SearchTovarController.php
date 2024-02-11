@@ -10,7 +10,7 @@ use App\Services\ResultGroupService;
 
 class SearchTovarController extends Controller
 {
-    public function index($brand, $article, ) {
+    public function index($brand, $article) {
 
 
         $serviceResult = new ResultGroupService();
@@ -21,6 +21,8 @@ class SearchTovarController extends Controller
 
         $ob_result = $serviceResult->groupResult($result);
 
+        // dd($result);
+        // dd($brand, $article);
         // dd($ob_result);
 
         return view('search-tovar', [

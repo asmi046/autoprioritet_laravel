@@ -60,6 +60,15 @@ section{
 
 }
 
+.breadcrumbs_section {
+    padding-bottom: 0
+}
+
+.inner_page_section {
+    h1{
+        margin-top: 0
+    }
+}
 
 @import "standart";
 @import "header";

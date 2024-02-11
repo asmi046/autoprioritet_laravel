@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Consultation;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginFormRequest extends FormRequest
+class ConsultFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,7 @@ class LoginFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => 'Поле Email должно быть заполнено',
-            'email.email' => 'Введенная строка не является адресом электронной почты',
-            'email.exists' => 'Не верный логин или пароль',
-            'password.required' => 'Поле Пароль должно быть заполнено',
+            'phone.required' => 'Поле "Телефон" должно быть заполнено',
         ];
     }
 
@@ -37,8 +34,9 @@ class LoginFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'password' => ['required', 'string'],
-            'email' => ['required', 'email', 'string', 'exists:users,email'],
+            "name" => [],
+            "phone" => ['required','string'],
+            "message" => []
         ];
     }
 }
