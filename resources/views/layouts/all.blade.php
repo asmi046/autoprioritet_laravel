@@ -33,6 +33,7 @@
     ])
 </head>
 <body>
+    @include('svg-icons')
     <main id="main">
         <section class="top_info_section">
             <div class="container">

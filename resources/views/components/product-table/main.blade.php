@@ -13,7 +13,10 @@
     <tbody>
         @foreach ($brand as $item)
         <tr>
-            <td>{{$item['caption']}}</td>
+            <td class="name_td">
+                <x-product-table.foto-icon :item="$item"></x-product-table.foto-icon>
+                <span>{{$item['caption']}}</span>
+            </td>
             <td>{{$item['deliverydays']}}</td>
             <td>{{$item['stock']}}</td>
             <td>{{$item['rest']}}</td>

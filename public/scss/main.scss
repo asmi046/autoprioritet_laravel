@@ -38,6 +38,29 @@ section{
     }
 }
 
+.name_td {
+    display: flex;
+}
+
+.photo_lnk {
+    margin-right: 5px;
+    display: flex;
+
+
+    .sprite_icon {
+        width:20px;
+        height: 15px;
+        fill: $black_color;
+        margin: auto;
+
+        &:hover {
+            fill: olivedrab;
+        }
+    }
+
+}
+
+
 @import "standart";
 @import "header";
 @import "main_page_section";
