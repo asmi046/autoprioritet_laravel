@@ -29,6 +29,7 @@
         'public/fonts/icons/style.css',
         'resources/css/app.css',
         'resources/js/app.js',
+        'resources/js/cart.js',
         'public/scss/main.scss'
     ])
 </head>

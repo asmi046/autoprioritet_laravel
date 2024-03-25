@@ -1,0 +1,61 @@
+.to_card_widget {
+	display: flex;
+	justify-content: space-between;
+    max-width: 160px;
+
+    input[type=number] {
+        max-width: 100px;
+    }
+
+    .lb_wrapper {
+        display: flex;
+        .like {
+            display: flex;
+            height: 100%;
+            margin: auto auto auto 20px;
+
+            .to_favorites {
+                margin:  auto 0 0 auto;
+
+                @media screen and (max-width:768px) {
+                    width: 30px;
+                    margin-right: auto;
+                    margin-left: 0;
+                }
+
+                svg{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            @media screen and (max-width:768px) {
+                flex: 0 1 30px;
+            }
+        }
+
+        .sale_btn {
+            margin-right: 0;
+            display: flex;
+
+            a{
+                margin-left: auto;
+
+                @media screen and (max-width:768px) {
+                    margin: auto auto auto 20px;
+                }
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            flex: unset;
+            margin-top: 30px;
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        flex-direction:column
+    }
+
+
+}

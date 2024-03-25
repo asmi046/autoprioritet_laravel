@@ -1,0 +1,27 @@
+$main_color: #65B965;
+$sub_color: #ffcb00e6;
+
+@import "cart_table_in_page";
+@import "to_card_btn";
+@import "to_cart_widget";
+@import "multi-search";
+
+.cart_icon {
+    fill: #333;
+}
+
+.table_cart_btn {
+    padding: 3px 10px;
+    display: flex;
+}
+
+.table_icon {
+    width: 25px;
+    height: 25px;
+}
+
+.cart_icon_loader {
+    fill: none;
+    stroke: $main_color;
+    height: 100px;
+}
