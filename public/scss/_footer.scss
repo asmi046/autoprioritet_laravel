@@ -18,4 +18,18 @@ footer {
 }
 
 
+@media (max-width: 512px) {
+    footer{
+        .container {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        * {
+            margin: 10px auto;
+            text-align: center;
+        }
+    }
+}
+
 

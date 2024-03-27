@@ -20,16 +20,13 @@ class Cart extends Model
         'price'
     ];
 
-    public function tovar_data() {
-        return $this->hasOne(ProductPrices::class, 'id', 'product_id');
-    }
 
     public function tovar_content() {
         return $this->hasOne(Product::class, 'sku', 'product_sku');
     }
 
-    public static function add($product_id, $product_sku, $addcount) {
-        $product = ProductPrices::where('id', $product_id)->firstOrFail();
+    public static function add($product_id, $product_sku, $addcount, $price) {
+        $product = Product::where('id', $product_id)->firstOrFail();
 
         if ($cart = self::where(["session_id" => session()->getId(), "product_sku" => $product_id])->first()) {
             $cart->quentity += $addcount;
@@ -41,7 +38,7 @@ class Cart extends Model
                 "product_id" => $product_id,
                 "product_sku" => $product_sku,
                 "quentity" => $addcount,
-                "price" => $product->price
+                "price" => $price
             ]);
         }
     }

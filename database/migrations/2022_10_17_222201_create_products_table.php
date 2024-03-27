@@ -18,10 +18,14 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('caption')->comment('Название');
-            $table->string('brand')->comment('Бренд');
+            $table->string('slug')->comment('Слаг');
+            $table->string('code')->comment('Код Trinity');
             $table->string('producer')->comment('Производитель');
             $table->string('stock')->comment('Склад');
-            $table->string('deliverydays')->comment('Доставка за');
+            $table->string('deliverydays')->nullable()->comment('Доставка за');
+            $table->integer('min_ordr_count')->nullable()->comment('Минимальное количество заказа');
+            $table->string('product_code')->nullable()->comment('Код продукта Trinity');
+            $table->string('price')->comment('Цена');
             $table->string('sku')->unique()->comment('Артикул');
             $table->string('img')->nullable()->comment('Заглавное изображение');
             $table->text('description')->nullable()->comment('Описание');

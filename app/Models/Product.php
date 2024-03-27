@@ -17,10 +17,14 @@ class Product extends Model
 
     public $fillable = [
         'caption',
-        'brand',
+        'code',
+        'slug',
         'producer',
         'stock',
         'deliverydays',
+        'min_ordr_count',
+        'product_code',
+        'price',
         'sku',
         'img',
         'description',

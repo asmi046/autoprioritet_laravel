@@ -9,6 +9,7 @@
 
     .lb_wrapper {
         display: flex;
+        margin-left: 5px;
         .like {
             display: flex;
             height: 100%;
@@ -46,16 +47,13 @@
                 }
             }
         }
-
-        @media screen and (max-width:768px) {
-            flex: unset;
-            margin-top: 30px;
-        }
     }
-
-    @media screen and (max-width:768px) {
-        flex-direction:column
-    }
-
 
 }
+
+@media screen and (max-width:768px) {
+    .to_card_widget {
+        max-width: 100%;
+    }
+}
+

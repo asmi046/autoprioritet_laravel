@@ -5,7 +5,7 @@
             <use xlink:href="#cart_btn"></use>
         </svg>
     </a>
-    <a v-else :href="bascet" :title="'Оформить' + inBascetCount + 'товаров.'" class="button fill_btn">
+    <a v-else :href="bascet" :title="'Оформить' + inBascetCount + ' товаров в корзине.'" class="button fill_btn table_cart_btn">
         <svg class="table_icon">
             <use xlink:href="#rub"></use>
         </svg>
@@ -21,9 +21,9 @@ export default {
 
 props: {
     sku:String,
-    skuid:String,
     bascet:String,
-    product:Object
+    product:Object,
+    price:Number
 },
 
 setup(props){
@@ -34,21 +34,23 @@ setup(props){
     let inBascet = ref(false)
     let inBascetCount = ref(1)
 
-
-    watch(() => [store.getters.cartCount,props.skuid], function() {
-        let inBascetElem = store.state.cart_tovars.find((elem) => { return elem.product_id === props.skuid})
+    watch(() => [store.getters.cartCount], function() {
+        let inBascetElem = store.state.cart_tovars.find((elem) => { return elem.product_sku === props.sku})
         inBascet.value = (inBascetElem != undefined)
+        console.log(store.state.cart_tovars)
         inBascetCount.value =  (inBascetElem != undefined)?inBascetElem.quentity:0
     });
 
     const addToBascet = () => {
         let tiken = document.querySelector('meta[name="_token"]').content;
 
+        console.log(props.price)
+
         axios.post('/bascet/add', {
             'product_sku': props.sku,
-            'product_id': props.skuid,
             'addcount':countToAdd.value,
             'product':props.product,
+            'price':props.price,
             '_token': tiken
         })
         .then(() => {

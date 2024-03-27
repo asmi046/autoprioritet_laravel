@@ -22,3 +22,15 @@
 
     }
 }
+
+
+@media (max-width: 512px) {
+    .material_card {
+        flex-direction: column;
+
+        .img_wrapper {
+            width: 100%;
+            max-height: 250px;
+        }
+    }
+}

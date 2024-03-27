@@ -35,6 +35,7 @@
 </head>
 <body>
     @include('svg-icons')
+    @include("cart.cart-svg")
     <main id="main">
         <section class="top_info_section">
             <div class="container">
@@ -64,7 +65,8 @@
             <div class="container">
                 <div class="search_line">
                     <a href="{{route('home')}}" class="logo">
-                        <img src="{{asset('img/logo.svg')}}" alt="">
+                        <img class="desctop_logo" src="{{asset('img/logo_white.svg')}}" alt="">
+                        <img class="mobile_logo" src="{{asset('img/logo_mini.svg')}}" alt="">
                     </a>
 
                     <form action="{{ route('search') }}" method="GET" class="main_search_form">
@@ -76,8 +78,8 @@
                     </form>
 
                     <div class="bascet_control">
-                        <a class="buscrt_in_head" href="#">
-                            <span>Корзина</span> | <span class="counter">0</span>
+                        <a id="counter_app" class="buscrt_in_head" href="{{ route('bascet') }}">
+                            <span>Корзина</span> | <cart-counter></cart-counter>
                         </a>
                     </div>
                 </div>

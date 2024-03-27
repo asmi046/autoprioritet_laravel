@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('session_id');
             $table->integer('user_id');
-            $table->string('product_sku', 150);
+            $table->string('product_sku', 550);
             $table->integer('quentity');
             $table->double('price', 12,2)->default(0);
             $table->foreignId('product_id')->comment("id товара");

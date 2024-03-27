@@ -25,20 +25,19 @@
                 <div v-for="(item, index) in bascetList" :key="item.product_id" class="tovar">
 
                     <div class="tl-side left-side">
-                        <div class="tovar_all_blk picture_blk">
-                            <img v-if="item.tovar_content.img != ''" :src="item.tovar_content.img" alt="">
-                            <img v-else else :src="noPhotoUrl" alt="">
 
-                        </div>
                         <div class="tovar_all_blk name_blk">
-                            <h2>{{item.tovar_content.title}} {{item.tovar_data.volume}} {{item.tovar_data.ed_izm}}</h2>
-                            <p> Артикул: {{item.product_sku}} / {{item.product_id}} </p>
+                            <h2>{{item.tovar_content.caption}}</h2>
+                            <p> Артикул: {{item.product_sku}}</p>
+                            <p> Производитель: {{item.tovar_content.producer}}</p>
+                            <p> Склад: {{item.tovar_content.stock}}</p>
+                            <p> Срок поставки: {{item.tovar_content.deliverydays}}</p>
                         </div>
                     </div>
 
                     <div class="tl-side right-side">
                         <div class="tovar_all_blk price_blk">
-                            <span class="rub price_formator">{{Number(item.price).toLocaleString('ru-RU')}}</span>
+                            <span class="rub price_formator">{{Number(item.price).toLocaleString('ru-RU')}} ₽</span>
                         </div>
                         <div class="tovar_all_blk couint_blk">
                             <div class="number_wrapper">
@@ -48,10 +47,15 @@
                             </div>
                         </div>
                         <div class="tovar_all_blk summ_blk">
-                            <span class="rub price_formator">{{Number(parseFloat(item.quentity)*parseFloat(item.price)).toLocaleString('ru-RU')}} <span class="rub_symbol"></span></span>
+                            <span class="rub price_formator">{{Number(parseFloat(item.quentity)*parseFloat(item.price)).toLocaleString('ru-RU')}} ₽</span>
                         </div>
                         <div class="tovar_all_blk dll_blk">
-                            <span @click.prevent="deleteElement(item, index)" title="Удалить товар"></span>
+                            <span @click.prevent="deleteElement(item, index)" title="Удалить товар">
+                                <svg class="cart_icon cart_icon_loader">
+                                    <use xlink:href="#cart_clear"></use>
+                                </svg>
+                            </span>
+
                         </div>
                     </div>
                 </div>
@@ -62,19 +66,19 @@
                     <div class="itogo_row">
                         <span class="text">Товары (<span>{{count}}</span>)</span>
                         <span class="razd"></span>
-                        <span class="p_price rub price_formator">{{Number(subtotal).toLocaleString('ru-RU')}} <span class="rub_symbol"></span></span>
+                        <span class="p_price rub price_formator">{{Number(subtotal).toLocaleString('ru-RU')}} ₽</span>
                     </div>
 
                     <div v-if="deliveryPrice != 0" class="itogo_row">
                         <span class="text">Доставка</span>
                         <span class="razd"></span>
-                        <span class="p_price rub price_formator">{{Number(deliveryPrice).toLocaleString('ru-RU')}} <span class="rub_symbol"></span></span>
+                        <span class="p_price rub price_formator">{{Number(deliveryPrice).toLocaleString('ru-RU')}} ₽</span>
                     </div>
 
                     <div class="itogo_row itogo_row_final">
                         <span class="text">Итого</span>
                         <span class="razd"></span>
-                        <span class="p_price rub price_formator">{{Number(subtotal + deliveryPrice).toLocaleString('ru-RU')}} <span class="rub_symbol"></span></span>
+                        <span class="p_price rub price_formator">{{Number(subtotal + deliveryPrice).toLocaleString('ru-RU')}} ₽</span>
                     </div>
                 </div>
             </div>

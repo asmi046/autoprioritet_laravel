@@ -17,7 +17,7 @@
         @if (!empty($brand))
             <h1>Поиск запчасти по артикулу: {{ $search }}</h1>
 
-            <table class="brand_table">
+            <table class="tovar_table">
                 <thead>
                     <tr>
                         <th>Артикул</th>
@@ -31,11 +31,14 @@
                     @foreach ($brand['data'] as $item)
                     @continue(empty($item['producer']))
                     <tr>
-                        <td>{{$item['article']}}</td>
-                        <td>{{$item['producer']}}</td>
-                        <td>{{$item['ident']}}</td>
+                        <td><div class="m_title">Артикул</div><span class="content">{{$item['article']}}</span></td>
+                        <td><div class="m_title">Производитель</div><span class="content">{{$item['producer']}}</span></td>
+                        <td><div class="m_title">Коментарий</div><span class="content">{{$item['ident']}}</span></td>
                         <td>
-                            <x-a-icon :href="route('search-tovar', [ 'brand' => $item['producer'], 'article' => $item['article'] ] )" icon="pi ap_setting">Цены и аналоги</x-a-icon>
+                            <div class="m_title">Поиск</div>
+                            <span class="content">
+                                <x-a-icon :href="route('search-tovar', [ 'brand' => $item['producer'], 'article' => $item['article'] ] )" icon="pi ap_setting">Цены и аналоги</x-a-icon>
+                            </span>
                         </td>
                     </tr>
                     @endforeach

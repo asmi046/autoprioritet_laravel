@@ -21,3 +21,42 @@ table {
         background-color: #EBEBEB;
     }
 }
+
+
+.tovar_table {
+    .m_title{
+        display: none;
+    }
+}
+
+
+@media (max-width: 680px) {
+    .tovar_table {
+        thead{
+            display: none;
+        }
+
+        tr{
+            display: flex;
+            flex-direction: column;
+            td{
+                display: flex;
+                justify-content: start;
+                flex-wrap: wrap;
+                padding: 0;
+            }
+        }
+
+        .m_title{
+            display: block;
+            width: 35%;
+            background-color: $main_color;
+            padding: 5px 10px;
+        }
+        .name_td,
+        .content {
+            flex:1;
+            padding: 5px 10px;
+        }
+    }
+}

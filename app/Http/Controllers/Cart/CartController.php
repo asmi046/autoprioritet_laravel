@@ -16,6 +16,7 @@ use App\Actions\TelegramSendAction;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\Cart\BascetForm;
+use App\Services\TrinityProductService;
 
 class CartController extends Controller
 {
@@ -23,23 +24,26 @@ class CartController extends Controller
         return view('cart.cart');
     }
 
-    public function add(Request $request) {
+    public function add(Request $request, TrinityProductService $tp) {
         $_token = $request->input('_token');
         $addcount = $request->input('addcount');
         $prod = $request->input('product');
-        $prod['sku'] = $prod['bid'];
+        $price = $request->input('price');
+
+        $insert_prod = $tp->create_product($prod, $price, $price);
 
         $product = Product::firstOrCreate(
-            $prod
+            ['sku' => $insert_prod['sku']],
+            $insert_prod
         );
 
-        Cart::add($product->id, $product->sku, $addcount);
+        Cart::add($product->id, $product->sku, $addcount, $price);
 
-        return array($product_id, $_token);
+        return array($product->id, $_token);
     }
 
     public function get_all() {
-        $cart_product = Cart::with('tovar_data', 'tovar_content')->where("carts.session_id", session()->getId())->get();
+        $cart_product = Cart::with( 'tovar_content')->where("carts.session_id", session()->getId())->get();
         return ["count" => Cart::cart_coun(), "position" => $cart_product] ;
     }
 

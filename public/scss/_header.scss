@@ -2,8 +2,9 @@
 .top_info_section {
 
     background-color: $black_color;
-    color:white;
+    color:$black_color;
     padding: 5px 0;
+    border-bottom: 1px solid $main_color;
 
     a{
         color:white;
@@ -22,6 +23,10 @@
     }
 }
 
+.search_section {
+    background-color: $black_color;
+}
+
 .search_line {
     display: flex;
     justify-content: space-between;
@@ -33,6 +38,10 @@
 
     .logo{
         display: flex;
+        .mobile_logo {
+            display: none;
+        }
+
         img{
             margin-top: auto;
         }
@@ -66,4 +75,39 @@
             margin-right: 20px;
         }
     }
+}
+
+
+@media (max-width: 512px) {
+    .top_info_section {
+
+        .adres {
+            display: none;
+        }
+    }
+
+    .search_line {
+        .logo{
+
+            .desctop_logo {
+                display: none;
+            }
+
+            .mobile_logo {
+                display: block;
+                height: 36px;
+                margin: auto 0 auto 0;
+            }
+        }
+
+        .main_search_form {
+            margin: auto 10px 0 10px;
+        }
+
+        .bascet_control .buscrt_in_head {
+            padding: 0 10px;
+        }
+    }
+
+
 }
