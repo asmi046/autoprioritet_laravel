@@ -9,7 +9,13 @@
 @section('description', $description)
 
 @section('main')
-    <x-breadcrumbs :title="$title"></x-breadcrumbs>
+
+    <section class="breadcrumbs_section">
+        <div class="container">
+            <x-breadcrumbs :title="$title"></x-breadcrumbs>
+        </div>
+    </section>
+
     <div class="container">
         <h1>Корзина</h1>
     </div>
