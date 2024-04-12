@@ -39,7 +39,7 @@ class CartController extends Controller
 
         Cart::add($product->id, $product->sku, $addcount, $price);
 
-        return array($product->id, $_token);
+        return array($product->id, $_token, $addcount);
     }
 
     public function get_all() {
@@ -63,34 +63,35 @@ class CartController extends Controller
     }
 
     public function send(BascetForm $request) {
-        $order = Order::create([
+
+        $order_data = [
             'name' => $request->input('fio'),
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
             'adress' => $request->input('adress'),
             'comment' => $request->input('comment'),
-            'position_count' => $request->input('count'),
-            'amount' => $request->input('amount'),
-            'delivery' => $request->input('delivery'),
-            'pay' => $request->input('pay'),
             'session_id' => session()->getId(),
             'user_id' => ($request->user())?$request->user()->id:0,
 
-        ]);
+        ];
+
+        $order = Order::create($order_data);
 
 
         // отправка заказа в Telegram
         $to_text = new BascetToTextAction();
         $tgsender = new TelegramSendAction();
 
+        // return $request;
+
         $to_text = $to_text->handle($request, $order->id);
         $tgsender->handle($to_text);
 
-        foreach ($request->input('tovars') as $item) {
-            $order->orderCart()->create($item);
-        }
+        // foreach ($request->input('tovars') as $item) {
+        //     $order->orderCart()->create($item);
+        // }
 
-        $order->orderProducts()->sync(array_column($request->input('tovars'), "id"));
+        // $order->orderProducts()->sync(array_column($request->input('tovars'), "id"));
 
         Mail::to(config('cart.send_to'))->send(new BascetSend($request));
 

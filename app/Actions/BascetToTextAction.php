@@ -17,8 +17,11 @@ class BascetToTextAction {
         $rez_text .= "\n\r\n\r<b>Состав заказа</b>\n\r\n\r";
 
         foreach ($request->input('tovars') as $item) {
-            $rez_text .= $item["tovar_content"]["title"]." (Артикул:".$request->input("product_sku").")"."\n\r";
-            $rez_text .= $item["price"]." ₽\n\r";
+            $rez_text .= $item["tovar_content"]["caption"]." (Артикул: ".$item["product_sku"].")"."\n\r";
+            $rez_text .= $item["price"]."\n\r";
+            $rez_text .= "<strong>Производитель:</strong> ".$item["tovar_content"]["producer"]." ₽\n\r";
+            $rez_text .= "<strong>Склад:</strong> ".$item["tovar_content"]["stock"]." ₽\n\r";
+            $rez_text .= "<strong>Срок поставки:</strong> ".$item["tovar_content"]["deliverydays"]." ₽\n\r";
             $rez_text .= "Кол-во: " . $item["quentity"]."\n\r";
             $rez_text .= "Подитог: " . (float)$item["quentity"] * (float)$item["price"]."\n\r";
             $rez_text .= "---------\n\r";

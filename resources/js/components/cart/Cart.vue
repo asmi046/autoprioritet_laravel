@@ -250,7 +250,7 @@ export default {
                 // else
                 //     document.location.href="/bascet/thencs"
 
-                document.location.href="/bascet/thencs"
+                //document.location.href="/bascet/thencs"
             })
             .catch(error => console.log(error));
         },

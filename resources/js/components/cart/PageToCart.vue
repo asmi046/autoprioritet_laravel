@@ -4,7 +4,7 @@
         <input v-model="count" type="number" name="count" id="">
         <div class="lb_wrapper">
             <div class="sale_btn">
-                <to-bascet-btn-page :product="product" :sku="sku" :price="price" :bascet="'/bascet'"></to-bascet-btn-page>
+                <to-bascet-btn-page :count="count" :product="product" :sku="sku" :price="price" :bascet="'/bascet'"></to-bascet-btn-page>
             </div>
         </div>
     </div>
