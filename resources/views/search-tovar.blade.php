@@ -13,7 +13,7 @@
 </section>
 
 <section class="inner_page_section">
-    <div class="container">
+    <div id="cart_app" class="container">
 
         <h1>Запчасти: {{ $article }} - {{ $brand }}</h1>
 

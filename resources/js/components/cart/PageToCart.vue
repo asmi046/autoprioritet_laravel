@@ -1,7 +1,7 @@
 <template>
     <div class="to_card_widget">
 
-        <input v-model="count" type="number" name="count" id="">
+        <input v-model="count" :min="product.minOrderCount" :step="product.minOrderCount" type="number" name="count" id="">
         <div class="lb_wrapper">
             <div class="sale_btn">
                 <to-bascet-btn-page :count="count" :product="product" :sku="sku" :price="price" :bascet="'/bascet'"></to-bascet-btn-page>
@@ -25,11 +25,9 @@ export default {
 
     setup(props){
 
-        let count = ref(1)
-        let step = ref(1)
+        let count = ref(props.product.minOrderCount)
         return {
             count,
-            step,
             sku:props.sku,
             product:props.product,
             price:props.price,

@@ -21,8 +21,6 @@ class SearchTovarController extends Controller
 
         $ob_result = $serviceResult->groupResult($result);
 
-        // dd($result);
-        // dd($brand, $article);
         // dd($ob_result);
 
         return view('search-tovar', [

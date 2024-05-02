@@ -14,6 +14,7 @@
         <div class="container">
             <h2 class="mt_0">Недавно искали</h2>
             <div class="last_search_line">
+                <a href="{{route("search", ['search'=> "24012802481"])}}">24012802481</a>
                 <a href="{{route("search", ['search'=> "DSF066G"])}}">DSF066G</a>
                 <a href="{{route("search", ['search'=> "OP570"])}}">OP570</a>
                 <a href="{{route("search", ['search'=> "R155113"])}}">R155113</a>

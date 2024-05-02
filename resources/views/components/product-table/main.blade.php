@@ -1,4 +1,4 @@
-<table id="cart_app" class="tovar_table">
+<table class="tovar_table">
     <thead>
         <tr>
             <th>Наименование</th>
