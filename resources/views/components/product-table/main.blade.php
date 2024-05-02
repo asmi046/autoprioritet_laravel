@@ -22,33 +22,34 @@
             </td>
             <td title="Приблизительный срок поставки {{$item['deliverydays']}} дней">
                 <div class="m_title">Срок</div>
-                <span class="content">
+                <div class="content">
                     {{$item['deliverydays']}}
-                </span>
+                </div>
             </td>
             <td>
                 <div class="m_title">Склад</div>
-                <span class="content">
-                    {{$item['stock']}}
-                </span>
+                <div class="content content_stock">
+                    <span>{{$item['stock']}}</span>
+                    <x-stock-info.table-vidget :item="$item"></x-stock-info.table-vidget>
+                </div>
             </td>
             <td>
                 <div class="m_title">Наличие</div>
-                <span class="content">
+                <div class="content">
                     {{$item['rest']}}
-                </span>
+                </div>
             </td>
             <td>
                 <div class="m_title">Цена</div>
-                <span class="content">
+                <div class="content">
                     {{$item['price']}}
-                </span>
+                </div>
             </td>
             <td>
                 <div class="m_title">Корзина</div>
-                <span class="content">
+                <div class="content">
                     <page-to-cart sku="{{ generate_sku($item) }}" :price="{{ $item['price'] }}" :product="{{json_encode($item)}}"></page-to-cart>
-                </span>
+                </div>
             </td>
         </tr>
         @endforeach

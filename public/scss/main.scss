@@ -68,7 +68,34 @@ section{
     h1{
         margin-top: 0
     }
+
+    .stock_info {
+        width:50px;
+        height: 15px;
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+        flex-wrap: wrap;
+        .z_all {
+            width:50%;
+        }
+        .z_ok {
+            background-color: #00BC00;
+        }
+
+        .z_fail {
+            background-color: #FF3636
+        }
+
+    }
 }
+
+
+.content_stock {
+    display: flex;
+    flex-direction: column;
+}
+
 
 @media (max-width: 1280px) {
     .container {
