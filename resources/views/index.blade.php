@@ -37,9 +37,9 @@
         <div class="container">
             <h2>Полезные материалы</h2>
             <div class="materials_wrapper">
-                @for ($i=0; $i<6; $i++)
-                    <x-materials.card></x-materials.card>
-                @endfor
+                @foreach ($blog_in_main as $item)
+                    <x-materials.card :item="$item"></x-materials.card>
+                @endforeach
             </div>
         </div>
     </section>

@@ -1,10 +1,10 @@
 <div class="material_card">
     <div class="img_wrapper">
-        <img class="img-obj" src="{{ asset('img/test.jpg') }}" alt="">
+        <img class="img-obj" src="{{ Storage::url('blog/'.$item->img) }}" alt="{{ $item->title }}">
     </div>
     <div class="info_blk">
-        <h2 class="mt_0">Заголовок полезной статьи</h2>
-        <p class="mb_20">Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты.</p>
-        <x-a-icon href="#" icon="pi ap_info">Читать далее</x-a-icon>
+        <h2 class="mt_0">{{ $item->title }}</h2>
+        <p class="mb_20">{{ mb_strimwidth(strip_tags($item->description), 0, 280, '...') }}</p>
+        <x-a-icon :href=" route('blog_page', $item->slug)" icon="pi ap_info">Читать далее</x-a-icon>
     </div>
 </div>

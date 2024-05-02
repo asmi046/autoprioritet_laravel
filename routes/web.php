@@ -11,6 +11,7 @@ use App\Http\Controllers\SearchTovarController;
 use App\Http\Controllers\SenderConsultController;
 
 use App\Http\Controllers\Page\PageController;
+use App\Http\Controllers\Blog\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,8 @@ Route::get('/search-tovar/{brand}/{article}', [SearchTovarController::class, 'in
 
 Route::post('/send_consult', [SenderConsultController::class, "send_consultation"])->name('send_consultation');
 
-Route::get('/page/{slug}', [PageController::class, "index"])->name('page');
+Route::get('/blog', [BlogController::class, "index"])->name('blog');
+Route::get('/blog/{slug}', [BlogController::class, "blog_page"])->name('blog_page');
 
 Route::middleware('auth')->group(function () {
     Route::get('/cabinet', [CabinetController::class, 'index'])->name('cabinet');
