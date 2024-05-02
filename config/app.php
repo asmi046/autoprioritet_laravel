@@ -197,6 +197,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\MoonShineServiceProvider::class,
 
+        App\Providers\HelpersLoadProvider::class,
+
     ],
 
     /*

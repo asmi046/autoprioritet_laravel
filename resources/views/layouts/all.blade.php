@@ -92,7 +92,7 @@
             <div class="container">
                 <nav>
                     <a href="#">Информация по подбору</a>
-                    <a href="#">Контакты</a>
+                    <a href="{{ route('contacts') }}">Контакты</a>
                 </nav>
             </div>
         </section>

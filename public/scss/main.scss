@@ -83,6 +83,12 @@ section{
     }
 }
 
+.map_page {
+    height: 250px;
+    border: 1px solid $gray_border_color;
+    overflow: hidden
+}
+
 @import "cabinet/cabinet-selector";
 @import "stock-info";
 @import "form-status";
