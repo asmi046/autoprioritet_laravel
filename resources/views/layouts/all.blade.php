@@ -51,12 +51,14 @@
 
                     @auth('web')
                         <x-a-icon href="{{ route('cabinet') }}" icon="pi ap_cabinet">Кабинет</x-a-icon>
+                        <x-a-icon href="{{ route('logout') }}" icon="pi ap_arrow_curve">Выйти</x-a-icon>
                     @endauth
 
                     @guest
                         <x-a-icon href="{{ route('login') }}" icon="pi ap_cabinet">Вход</x-a-icon>
+                        <x-a-icon href="{{ route('register') }}" icon="pi ap_note">Регистрация</x-a-icon>
                     @endguest
-                    <x-a-icon href="{{ route('register') }}" icon="pi ap_note">Регистрация</x-a-icon>
+
                 </div>
             </div>
         </section>

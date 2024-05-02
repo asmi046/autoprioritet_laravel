@@ -1,0 +1,18 @@
+.form-status {
+    border-radius: 4px;
+    padding: 20px;
+    border: 2px solid var(--grey);
+    margin-bottom: 2rem;
+
+    &--success {
+        border: 2px solid var(--active);
+        color: var(--active);
+        background-color: rgba(22, 164, 164, 0.1);
+    }
+
+    &--error {
+        border: 2px solid var(--alert-color);
+        color: var(--alert-color);
+        background-color: rgba(239, 69, 69, 0.1);
+    }
+}

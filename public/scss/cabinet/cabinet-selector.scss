@@ -1,0 +1,35 @@
+.cabinet_selector {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    .selector {
+        margin: 0 10px 0 0;
+        border: 1px solid $gray_border_color;
+        padding: 5px 25px;
+        border-radius: $border_rad;
+
+        &.active,
+        &:hover {
+            background-color: $main_color;
+            border-color: $main_color;
+        }
+    }
+
+    & a:last-child {
+        margin: 0 0 0 auto;
+    }
+}
+
+
+@media (max-width: 512px) {
+    .cabinet_selector {
+        flex-direction: column;
+        .selector {
+            margin-bottom: 10px;
+        }
+
+        & a:last-child {
+            display: none;
+        }
+    }
+}
