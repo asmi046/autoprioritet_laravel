@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-use App\Models\User;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterFormRequest;
 
 class AuthController extends Controller
 {
@@ -68,13 +69,8 @@ class AuthController extends Controller
         return redirect(route('cabinet.home'));
     }
 
-    public function register(Request $request) {
-        $user_data = $request->validate([
-            'name' => ['required', 'string'],
-            'phone' => ['required', 'string', 'unique:users,phone', 'size:16'],
-            'email' => ['email', 'unique:users,email'],
-            'password' => ['required','confirmed'],
-        ]);
+    public function register(RegisterFormRequest $request) {
+        $user_data = $request->validated();
 
         $user = User::create(
             [

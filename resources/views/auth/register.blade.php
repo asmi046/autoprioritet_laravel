@@ -17,9 +17,22 @@
         <form action="{{route('register_do')}}" method="post" class="box start-form">
             @csrf
 
-            <header>
+            @foreach ($errors->all() as $error)
+                <div class="form-status form-status--error">
+                    {{ $error }}
+                </div>
+            @endforeach
 
-            </header>
+            <div class="field">
+              <label class="label">Имя<span class="required">*</span></label>
+              <div class="control">
+                <input name="name" class="input" type="name" placeholder="Иван">
+              </div>
+
+              @error('name')
+                <p class="error">{{$message}}</p>
+              @enderror
+            </div>
 
             <div class="field">
               <label class="label">E-mail<span class="required">*</span></label>
