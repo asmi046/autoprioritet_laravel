@@ -60,6 +60,27 @@ section{
 
 }
 
+.sprite_icon {
+    fill: $black_color;
+    stroke: $black_color;
+    width: 10px;
+    height: 10px;
+    &:hover {
+        fill: olivedrab;
+    }
+}
+
+.sort_icon {
+    margin-left: 5px;
+    width: 12px;
+    height: 12px;
+    cursor:pointer;
+    &.desc{
+        transform: rotate(180deg);
+    }
+}
+
+
 .breadcrumbs_section {
     padding-bottom: 0
 }

@@ -39,9 +39,16 @@ class ResultGroupService {
         return $item;
     }
 
-    public function groupResult($result){
+    public function groupResult($result, $orderby='price', $order='asc'){
 
         $ob_result = [];
+
+        usort($result['data'], function ($a, $b) use ($orderby, $order) {
+            if ($order === 'asc')
+                return $a[$orderby] > $b[$orderby];
+            else
+                return $a[$orderby] < $b[$orderby];
+        });
 
         foreach ($result['data'] as $item)
             $ob_result[$item['producer']]['tovars'][] = $this->itemChenge($item);

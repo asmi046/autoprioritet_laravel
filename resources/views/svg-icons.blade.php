@@ -29,7 +29,11 @@
         </g>
     </symbol>
 
-    <symbol id="cart_like_icon_fill" viewBox="0 0 22 19">
+    <symbol id="arrow_down" viewBox="0 0 128 128">
+        <g>
+            <line style="fill:none;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="111" x2="64" y1="40.5" y2="87.499"/>
+            <line style="fill:none;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="64" x2="17" y1="87.499" y2="40.5"/>
+        </g>
     </symbol>
 
   </svg>

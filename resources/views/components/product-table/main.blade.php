@@ -5,7 +5,20 @@
             <th>Срок</th>
             <th>Склад</th>
             <th>Наличие</th>
-            <th>Цена</th>
+            <th>Цена
+
+                <a href="{{ Request::url()."?orderby=price&order=".((empty(request('order')) || request('order') === 'asc')?'desc':'asc') }}">
+                    <svg
+                    @class([
+                        'sprite_icon',
+                        'sort_icon',
+                        'desc' => request('order') == 'desc'
+                        ])>
+                        <use xlink:href="#arrow_down"></use>
+                    </svg>
+                </a>
+
+            </th>
             <th>Корзина</th>
         </tr>
     </thead>
