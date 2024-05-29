@@ -1,5 +1,11 @@
 <?php
 
+if (!function_exists("clear_trinity")) {
+    function clear_trinity(string $str) {
+        return str_replace(["Trinity-parts", "Trinity-Parts"], "", $str);
+    }
+}
+
 if (!function_exists("generate_sku")) {
     function generate_sku($product) {
         return (empty($product['bid']))?$product['code']."_".$product['producer']."_".$product['stock']:$product['bid'];

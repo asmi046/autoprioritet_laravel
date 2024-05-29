@@ -16,4 +16,20 @@
         background-color: #FF3636
     }
 
+
 }
+
+.vozvrat {
+    font-size: 12px;
+    color:darkgoldenrod;
+
+    &.vozvrat_red {
+        color:red
+    }
+
+    &.vozvrat_green {
+        color:green;
+    }
+}
+
+
