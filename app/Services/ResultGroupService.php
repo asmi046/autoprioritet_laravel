@@ -33,13 +33,13 @@ class ResultGroupService {
         if (auth()->check()) {
             $item['price'] = round($item['price'] * 1.1, 2);
         } else {
-            $item['price'] = round($item['price'] * 1.15, 2);
+            $item['price'] = round($item['price'] * 1.1, 2);
         }
 
         return $item;
     }
 
-    public function groupResult($result, $orderby='price', $order='asc'){
+    public function groupResult($result, $orderby='price', $order='desc'){
 
         $ob_result = [];
 

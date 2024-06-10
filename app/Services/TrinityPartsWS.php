@@ -30,6 +30,7 @@ class TrinityPartsWS {
         foreach ( $params as $name=>$param){
             $data->$name = $param;
         }
+
         return stream_context_create([
             'http' => [
                 'header' => "Content-Type:application/json\r\n\User-Agent:Trinity/1.0",
@@ -97,6 +98,7 @@ class TrinityPartsWS {
             'onlyStock' => '0',
             'crosses' => $showAnalogues ? 'allow' : 'disallow'
         ];
+
         switch ($searchType) {
             case 'onlyStock':
                 $params['onlyStock'] = '1';
@@ -109,6 +111,7 @@ class TrinityPartsWS {
                 $params['online'] = 'allow';
                 break;
         }
+
         $url = $this->host . 'search/byCodeBrand';
         return $this->query($url, $this->createParams($params), $asArray);
     }

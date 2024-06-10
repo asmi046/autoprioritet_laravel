@@ -13,17 +13,15 @@ class SearchTovarController extends Controller
     public function index($brand, $article, Request $request) {
 
         $order_by = $request->input('order_by')?$request->input('order_by'):'price';
-        $order = $request->input('order')?$request->input('order'):1;
+        $order = $request->input('order')?$request->input('order'):'asc';
 
         $serviceResult = new ResultGroupService();
         $service = new TrinityPartsWS(config('trinity.trinity_key'));
         $result = [];
 
-        $result = $service->searchItems($article, $brand);
+        $result = $service->searchItems($article, $brand, searchType:'prices', showAnalogues:true);
 
         $ob_result = $serviceResult->groupResult($result, $order_by, $order);
-
-        dump($result);
 
         return view('search-tovar', [
             'brand' => $brand,
