@@ -42,7 +42,7 @@
             <td>
                 <div class="m_title">Склад</div>
                 <div class="content content_stock">
-                    <span>{{$item['stock']}}</span>
+                    <span>{{ clear_trinity_stoc($item['stock']) }}</span>
                     <x-stock-info.table-vidget :item="$item"></x-stock-info.table-vidget>
                     <span @class([
                         'vozvrat',

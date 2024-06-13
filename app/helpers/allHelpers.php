@@ -6,6 +6,15 @@ if (!function_exists("clear_trinity")) {
     }
 }
 
+if (!function_exists("clear_trinity_stoc")) {
+    function clear_trinity_stoc(string $str) {
+        if (stripos($str, "Trinity-Parts") !== false)
+            return "ЭКСПРЕСС ДОСТАВКА";
+        else
+            return $str;
+    }
+}
+
 if (!function_exists("generate_sku")) {
     function generate_sku($product) {
         return (empty($product['bid']))?$product['code']."_".$product['producer']."_".$product['stock']:$product['bid'];
