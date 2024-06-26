@@ -42,6 +42,7 @@ class ResultGroupService {
     public function groupResult($result, $orderby='price', $order='desc'){
 
         $ob_result = [];
+        $crosses_result = [];
 
         usort($result['data'], function ($a, $b) use ($orderby, $order) {
             if ($order === 'asc')
@@ -50,16 +51,23 @@ class ResultGroupService {
                 return $a[$orderby] < $b[$orderby];
         });
 
-        foreach ($result['data'] as $item)
+        foreach ($result['data'] as $item) {
+            if ($item['caption'] === 'crosses') {
+                $crosses_result[] = $item;
+                continue;
+            }
+
+
             $ob_result[$item['producer']]['tovars'][] = $this->itemChenge($item);
+        }
+
 
         foreach ($ob_result as $key => $item)
         {
             $ob_result[$key]['didgest'] = $this->calcDigest($item['tovars']);
-
         }
 
-        return $ob_result;
+        return ['tovars' => $ob_result, 'crosses' => $crosses_result];
     }
 
 }

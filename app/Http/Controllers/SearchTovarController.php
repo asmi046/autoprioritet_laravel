@@ -19,14 +19,17 @@ class SearchTovarController extends Controller
         $service = new TrinityPartsWS(config('trinity.trinity_key'));
         $result = [];
 
-        $result = $service->searchItems($article, $brand, searchType:'prices', showAnalogues:true);
+        $result = $service->searchItems($article, $brand, includeStocks:'1', showAnalogues:true);
 
         $ob_result = $serviceResult->groupResult($result, $order_by, $order);
+
+        dump($ob_result);
 
         return view('search-tovar', [
             'brand' => $brand,
             'article' => $article,
-            'tovars' => $ob_result
+            'tovars' => $ob_result['tovars'],
+            'crosses' => $ob_result['crosses'],
         ]);
     }
 }

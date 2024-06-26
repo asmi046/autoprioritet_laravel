@@ -88,7 +88,7 @@ class TrinityPartsWS {
      *
      * @return array|mixed
      */
-    public function searchItems($article, $brand, $searchType = 'full', $showAnalogues = true,$asArray = true) {
+    public function searchItems($article, $brand, $searchType = 'full', $includeStocks = '0', $showAnalogues = true, $asArray = true) {
         $article = strtoupper($article);
         $brand = strtoupper($brand);
         $searchParams = new \stdClass();
@@ -96,8 +96,11 @@ class TrinityPartsWS {
         $params = [
             'searchCode' => $searchParams,
             'onlyStock' => '0',
+            'includeStocks' => $includeStocks,
             'crosses' => $showAnalogues ? 'allow' : 'disallow'
         ];
+
+
 
         switch ($searchType) {
             case 'onlyStock':

@@ -27,7 +27,7 @@
             ></x-product-table.details>
 
             @if (count($tovars) > 1)
-                <h2>Найденные аналоги</h2>
+                <h2>Экспресс доставка</h2>
             @endif
 
             @foreach ($tovars as $key => $item)
@@ -39,6 +39,29 @@
                 :tovar="$item"
                 ></x-product-table.details>
             @endforeach
+
+            @if (isset($crosses))
+                <h2>Найденные аналоги</h2>
+                <table class="tovar_table">
+                    <thead>
+                        <tr>
+                            <th>Артикул</th>
+                            <th>Бренд</th>
+                            <th>Цена от</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach ($crosses as $item)
+                            <tr>
+                                <td>{{ $item['code'] }}</td>
+                                <td>{{ $item['producer'] }}</td>
+                                <td>{{ $item['price'] }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @endif
         @else
             <h2>К сожалению товары не найдены</h2>
         @endif
