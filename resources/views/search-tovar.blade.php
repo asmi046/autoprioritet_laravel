@@ -53,12 +53,33 @@
                     <tbody>
                         @foreach ($crosses['tovars'] as $item)
                             <tr>
-                                <td>{{ $item['producer'] }}</td>
-                                <td>{{ $item['code'] }}</td>
-                                <td>{{ $item['price'] }}</td>
                                 <td>
-                                    <x-a-icon :href="route('search-tovar', [ 'brand' => $item['producer'], 'article' => $item['code'] ] )" icon="pi ap_setting">Смотреть цены</x-a-icon>
+                                    <div class="m_title">Бренд</div>
+                                    <div class="content">
+                                        {{ $item['producer'] }}
+                                    </div>
                                 </td>
+                                <td>
+                                    <div class="m_title">Артикул</div>
+                                    <div class="content">
+                                        {{ $item['code'] }}
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="m_title">Цена от</div>
+                                    <div class="content">
+                                        {{ $item['price'] }}
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="m_title">Поиск</div>
+                                    <div class="content">
+                                        <x-a-icon :href="route('search-tovar', [ 'brand' => $item['producer'], 'article' => $item['code'] ] )" icon="pi ap_setting">Смотреть цены</x-a-icon>
+                                    </div>
+                                </td>
+
                             </tr>
                         @endforeach
                     </tbody>
