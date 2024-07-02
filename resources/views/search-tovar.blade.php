@@ -20,47 +20,51 @@
 
 
         @if (!empty($tovars))
+
+            @if (!empty($express))
+                <x-express-delivery-section :express="$express"></x-express-delivery-section>
+            @endif
+
             <x-product-table.details
             :isopen="true"
-            :brand="'Запрашиваемый бренд:'.$brand"
+            :brand="'Запрашиваемый бренд: '.$brand"
             :tovar="$tovars[$brand]"
             ></x-product-table.details>
 
-            @if (count($tovars) > 1)
-                <h2>Экспресс доставка</h2>
-            @endif
 
-            @foreach ($tovars as $key => $item)
-                @continue($key == $brand)
-
-                <x-product-table.details
-                :isopen="false"
-                :brand="$key"
-                :tovar="$item"
-                ></x-product-table.details>
-            @endforeach
 
             @if (isset($crosses))
-                <h2>Найденные аналоги</h2>
+            <x-product-table.details-crosses
+            :isopen="true"
+            heder="Аналоги (Кроссы)"
+            :didgest="$crosses['didgest']"
+            >
                 <table class="tovar_table">
                     <thead>
                         <tr>
-                            <th>Артикул</th>
                             <th>Бренд</th>
+                            <th>Артикул</th>
+
                             <th>Цена от</th>
+                            <th>Поиск</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach ($crosses as $item)
+                        @foreach ($crosses['tovars'] as $item)
                             <tr>
-                                <td>{{ $item['code'] }}</td>
                                 <td>{{ $item['producer'] }}</td>
+                                <td>{{ $item['code'] }}</td>
                                 <td>{{ $item['price'] }}</td>
+                                <td>
+                                    <x-a-icon :href="route('search-tovar', [ 'brand' => $item['producer'], 'article' => $item['code'] ] )" icon="pi ap_setting">Смотреть цены</x-a-icon>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+            </x-product-table.details-crosses>
+
             @endif
         @else
             <h2>К сожалению товары не найдены</h2>

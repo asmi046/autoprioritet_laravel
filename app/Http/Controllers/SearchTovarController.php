@@ -21,15 +21,16 @@ class SearchTovarController extends Controller
 
         $result = $service->searchItems($article, $brand, includeStocks:'1', showAnalogues:true);
 
-        $ob_result = $serviceResult->groupResult($result, $order_by, $order);
+        $ob_result = $serviceResult->groupResult($result, $order_by, $order, $brand);
 
-        // dump($ob_result);
+        dump($ob_result);
 
         return view('search-tovar', [
             'brand' => $brand,
             'article' => $article,
             'tovars' => $ob_result['tovars'],
             'crosses' => $ob_result['crosses'],
+            'express' => $ob_result['express'],
         ]);
     }
 }

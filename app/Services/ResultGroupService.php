@@ -39,8 +39,9 @@ class ResultGroupService {
         return $item;
     }
 
-    public function groupResult($result, $orderby='price', $order='desc'){
+    public function groupResult($result, $orderby='price', $order='desc', $brand){
 
+        $express_result = [];
         $ob_result = [];
         $crosses_result = [];
 
@@ -53,12 +54,15 @@ class ResultGroupService {
 
         foreach ($result['data'] as $item) {
             if ($item['caption'] === 'crosses') {
-                $crosses_result[] = $item;
+                $crosses_result['tovars'][] = $item;
                 continue;
             }
 
 
-            $ob_result[$item['producer']]['tovars'][] = $this->itemChenge($item);
+            if ($item['producer'] === $brand)
+                $ob_result[$item['producer']]['tovars'][] = $this->itemChenge($item);
+            else
+                $express_result['tovars'][] = $this->itemChenge($item);
         }
 
 
@@ -67,7 +71,10 @@ class ResultGroupService {
             $ob_result[$key]['didgest'] = $this->calcDigest($item['tovars']);
         }
 
-        return ['tovars' => $ob_result, 'crosses' => $crosses_result];
+        $express_result['didgest'] = $this->calcDigest($express_result['tovars']);
+        $crosses_result['didgest'] = $this->calcDigest($crosses_result['tovars']);
+
+        return ['tovars' => $ob_result, 'express' => $express_result,  'crosses' => $crosses_result];
     }
 
 }

@@ -26,6 +26,14 @@ details {
         }
     }
 
+    &.express summary{
+        background-color: #4fc14f;
+    }
+
+    &.express[open] summary{
+        background-color: #77dd77;
+    }
+
     &[open] summary{
         background-color: $hover_color;
         margin-bottom: 20px;
