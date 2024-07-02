@@ -41,6 +41,7 @@
                     <x-materials.card :item="$item"></x-materials.card>
                 @endforeach
             </div>
+            <a class="button" href="{{ route('blog') }}">Смотреть все статьи</a>
         </div>
     </section>
 

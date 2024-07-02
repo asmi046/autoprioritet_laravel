@@ -12,12 +12,12 @@ class BlogController extends Controller
 
     public function index() {
         $all_blog = Blog::all();
-        return view('blog-page', ['all_blog' => $all_blog]);
+        return view('blog.blog', ['all_blog' => $all_blog]);
     }
 
     public function blog_page($slug) {
-        $blog = Blog::where('slug', $slug)->first();
-        if($blog == null) abort('404');
-        return view('blog-page', ['blog' => $blog]);
+        $page = Blog::where('slug', $slug)->first();
+        if($page == null) abort('404');
+        return view('blog.blog-page', ['page' => $page]);
     }
 }
