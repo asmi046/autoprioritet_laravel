@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
             OptionSeeder::class,
             UserSeeder::class,
+            MoonShineUser::class,
         ]);
     }
 }
