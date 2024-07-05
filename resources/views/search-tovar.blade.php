@@ -33,7 +33,7 @@
 
 
 
-            @if (isset($crosses))
+            @if (!empty($crosses))
             <x-product-table.details-crosses
             :isopen="true"
             heder="Аналоги (Кроссы)"

@@ -71,8 +71,13 @@ class ResultGroupService {
             $ob_result[$key]['didgest'] = $this->calcDigest($item['tovars']);
         }
 
-        $express_result['didgest'] = $this->calcDigest($express_result['tovars']);
-        $crosses_result['didgest'] = $this->calcDigest($crosses_result['tovars']);
+        if (isset($express_result['tovars']))
+            $express_result['didgest'] = $this->calcDigest($express_result['tovars']);
+        if (isset($crosses_result['tovars']))
+            $crosses_result['didgest'] = $this->calcDigest($crosses_result['tovars']);
+
+        // dump($express_result);
+        // dump($crosses_result);
 
         return ['tovars' => $ob_result, 'express' => $express_result,  'crosses' => $crosses_result];
     }
