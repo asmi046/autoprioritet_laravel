@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach ($brand['data'] as $item)
                     @continue(empty($item['producer']))
-                    <tr>
+                    <tr class="cliced_row">
                         <td><div class="m_title">Артикул</div><span class="content">{{$item['article']}}</span></td>
                         <td><div class="m_title">Производитель</div><span class="content">{{$item['producer']}}</span></td>
                         <td><div class="m_title">Коментарий</div><span class="content">{{$item['ident']}}</span></td>
