@@ -6,6 +6,13 @@ if (!function_exists("clear_trinity")) {
     }
 }
 
+if (!function_exists("get_express_stock")) {
+    function get_express_stock(string $str) {
+        $express_stock = config('stock.stock');
+        return (isset($express_stock[$str]))?$express_stock[$str]:$str;
+    }
+}
+
 if (!function_exists("clear_trinity_stoc")) {
     function clear_trinity_stoc(string $str) {
         if (stripos($str, "Trinity-Parts") !== false)
