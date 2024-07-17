@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\SearchQuery;
 
+use Illuminate\Http\Request;
 use App\Services\TrinityPartsWS;
+use Illuminate\Support\Facades\Auth;
 
 class SearchController extends Controller
 {
     public function index(Request $request) {
 
         $search_str = $request->input('search');
+
+        SearchQuery::create([
+            'query' => $search_str,
+            'user_id' => (Auth::check())?Auth::id():NULL
+        ]);
+
 
         $service = new TrinityPartsWS(config('trinity.trinity_key'));
         $result = [];
