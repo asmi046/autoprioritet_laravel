@@ -1,5 +1,5 @@
 <x-product-table.details-express
-:isopen="true"
+:isopen="false"
 heder="Экспресс-доставка"
 :didgest="$express['didgest']"
 >
