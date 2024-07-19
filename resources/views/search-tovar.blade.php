@@ -26,7 +26,7 @@
             @endif
 
             <x-product-table.details
-            :isopen="true"
+            :isopen="false"
             :brand="'Запрашиваемый бренд: '.$brand"
             :tovar="$tovars[$brand]"
             ></x-product-table.details>
