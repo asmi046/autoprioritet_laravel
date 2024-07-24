@@ -25,7 +25,7 @@
 
     <tbody>
         @foreach ($brand as $item)
-        <tr>
+        <tr @class(['is_express' => (get_express_stock(clear_trinity_stoc($item['stock'])) === "ЭКСПРЕСС ДОСТАВКА")])>
             <td>
                 <div class="m_title">Наименование</div>
                 <div class="name_td">
@@ -36,7 +36,12 @@
             <td title="Приблизительный срок поставки {{$item['deliverydays']}} дней">
                 <div class="m_title">Срок</div>
                 <div class="content">
-                    {{$item['deliverydays']}}
+                    @if (get_express_stock(clear_trinity_stoc($item['stock'])) === "ЭКСПРЕСС ДОСТАВКА")
+                        12 часов
+                    @else
+                        {{$item['deliverydays']}}
+                    @endif
+
                 </div>
             </td>
             <td>

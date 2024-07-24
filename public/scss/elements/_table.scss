@@ -20,6 +20,10 @@ table {
     tr:nth-child(2n) td {
         background-color: #EBEBEB;
     }
+
+    tr.is_express td{
+        background-color: #4fc14f4A;
+    }
 }
 
 
