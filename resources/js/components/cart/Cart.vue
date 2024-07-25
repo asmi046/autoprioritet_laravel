@@ -227,6 +227,8 @@ export default {
 
             if (this.errorList.length != 0 ) return;
 
+            console.log(this.bascetList)
+
             this.loadet = true;
             axios.post('/bascet/send', {
                 _token: document.querySelector('meta[name="_token"]').content,
@@ -250,7 +252,7 @@ export default {
                 // else
                 //     document.location.href="/bascet/thencs"
 
-                //document.location.href="/bascet/thencs"
+                document.location.href="/bascet/thencs"
             })
             .catch(error => console.log(error));
         },

@@ -19,6 +19,10 @@ section{
     padding-bottom: $section_space;
 }
 
+.empty_section {
+    height: 70vh;
+}
+
 .container{
     width:100%;
     max-width: $conteiner_max_w;

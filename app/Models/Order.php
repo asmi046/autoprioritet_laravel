@@ -42,9 +42,6 @@ class Order extends Model
         'phone',
     ];
 
-    public function orderProducts() {
-        return $this->belongsToMany(Product::class);
-    }
 
     public function orderCart() {
         return $this->hasMany(OrderProduct::class);

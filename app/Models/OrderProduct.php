@@ -14,6 +14,13 @@ class OrderProduct extends Model
         'product_sku',
         'quentity',
         'price',
+        'caption',
+        'code',
+        'producer',
+        'stock',
+        'deliverydays',
+        'min_ordr_count',
+        'product_code'
     ];
 
     public function tovar_data() {

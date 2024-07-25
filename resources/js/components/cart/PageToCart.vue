@@ -1,10 +1,10 @@
 <template>
     <div class="to_card_widget">
 
-        <input v-model="count" :min="product.minOrderCount" :step="product.minOrderCount" type="number" name="count" id="">
+        <input v-model="count" :min="product.minOrderCount" :max="product.rest" :step="product.minOrderCount" type="number" name="count" id="">
         <div class="lb_wrapper">
             <div class="sale_btn">
-                <to-bascet-btn-page :count="count" :product="product" :sku="sku" :price="price" :bascet="'/bascet'"></to-bascet-btn-page>
+                <to-bascet-btn-page :count="Number(count)" :product="product" :sku="sku" :price="price" :bascet="'/bascet'"></to-bascet-btn-page>
             </div>
         </div>
     </div>

@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'send_from' => env('MAIL_FROM_ADDRESS', 'asmi046@gmail.com'),
-    'send_from_text' => 'Магазин Военторг46',
-    'send_to' => ["asmi046@gmail.com", "1voentorg@bk.ru"],
+    'send_from' => env('MAIL_FROM_ADDRESS', 'info@autoprioritet.ru'),
+    'send_from_text' => 'Магазин АвтоПриоритет',
+    'send_to' => ["asmi-work046@yandex.ru", "info@autoprioritet.ru"],
     'subject' => 'Заказ через корзину на сайте',
-    'reply_to' => '1voentorg@bk.ru',
-    'reply_to_text' => 'Магазин Военторг46',
+    'reply_to' => 'info@autoprioritet.ru',
+    'reply_to_text' => 'Магазин АвтоПриоритет',
 ];

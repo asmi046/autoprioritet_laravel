@@ -72,7 +72,6 @@ class CartController extends Controller
             'comment' => $request->input('comment'),
             'session_id' => session()->getId(),
             'user_id' => ($request->user())?$request->user()->id:0,
-
         ];
 
         $order = Order::create($order_data);
@@ -87,13 +86,24 @@ class CartController extends Controller
         $to_text = $to_text->handle($request, $order->id);
         $tgsender->handle($to_text);
 
-        // foreach ($request->input('tovars') as $item) {
-        //     $order->orderCart()->create($item);
-        // }
+        foreach ($request->input('tovars') as $item) {
+            $data_p['product_sku'] =  $item['product_sku'];
+            $data_p['quentity'] =  $item['quentity'];
+            $data_p['price'] = $item['price'];
+            $data_p['caption'] = $item['tovar_content']['caption'];
+            $data_p['code'] = $item['tovar_content']['code'];
+            $data_p['producer'] = $item['tovar_content']['producer'];
+            $data_p['stock'] = $item['tovar_content']['stock'];
+            $data_p['deliverydays'] = $item['tovar_content']['deliverydays'];
+            $data_p['min_ordr_count'] = $item['tovar_content']['min_ordr_count'];
+            $data_p['product_code'] = $item['tovar_content']['product_code'];
+
+            $order->orderCart()->create($data_p);
+        }
 
         // $order->orderProducts()->sync(array_column($request->input('tovars'), "id"));
 
-        Mail::to(config('cart.send_to'))->send(new BascetSend($request));
+        Mail::to(config('cart.send_to'))->send(new BascetSend($request, $order->id));
 
         return ['send' => true];
     }
