@@ -26,20 +26,8 @@ class Order extends Model
         'delivery',
     ];
 
-    protected $allowedSorts = [
-        'id',
-        'created_at',
-        'name',
-        'email',
-        'phone',
-    ];
-
-    protected $allowedFilters = [
-        'id',
-        'created_at',
-        'name',
-        'email',
-        'phone',
+    protected $with = [
+        'orderCart',
     ];
 
 

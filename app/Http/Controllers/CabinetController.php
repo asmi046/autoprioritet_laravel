@@ -10,7 +10,7 @@ class CabinetController extends Controller
 {
     public function index(Request $request) {
         $orders = Order::where('user_id', Auth::user()->id)->paginate(15);
-
+        // dump($orders);
         return view('cabinet.cabinet', ['orders' => $orders]);
     }
 
