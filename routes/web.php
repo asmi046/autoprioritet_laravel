@@ -26,7 +26,7 @@ use App\Http\Controllers\Blog\BlogController;
 
 
 Route::get('/search', [SearchController::class, 'index'])->name('search');
-Route::get('/search-tovar/{brand}/{article}', [SearchTovarController::class, 'index'])->name('search-tovar');
+Route::get('/search-tovar/{article}/{brand}', [SearchTovarController::class, 'index'])->name('search-tovar')->where('brand', '.*');
 
 Route::post('/send_consult', [SenderConsultController::class, "send_consultation"])->name('send_consultation');
 

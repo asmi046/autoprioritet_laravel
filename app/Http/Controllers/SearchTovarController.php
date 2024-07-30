@@ -10,7 +10,7 @@ use App\Services\ResultGroupService;
 
 class SearchTovarController extends Controller
 {
-    public function index($brand, $article, Request $request) {
+    public function index($article, $brand, Request $request) {
 
         $order_by = $request->input('order_by')?$request->input('order_by'):'price';
         $order = $request->input('order')?$request->input('order'):'asc';
@@ -23,7 +23,7 @@ class SearchTovarController extends Controller
 
         $ob_result = $serviceResult->groupResult($result, $order_by, $order, $brand);
 
-        // dump($ob_result['tovars']);
+        dump($result, $article, $brand);
 
         return view('search-tovar', [
             'brand' => $brand,
