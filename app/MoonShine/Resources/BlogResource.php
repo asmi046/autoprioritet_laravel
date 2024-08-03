@@ -36,7 +36,7 @@ class BlogResource extends ModelResource
             Block::make([
                 ID::make()->sortable(),
                 Text::make('Название', 'title'),
-                Slug::make('Окончание сылки', 'slug')->hideOnIndex(),
+                Slug::make('Окончание сылки', 'slug')->from('title')->separator('-')->unique()->hideOnIndex(),
                 Image::make('Основное изображение', 'img')->dir('blog'),
                 TinyMce::make('Описание', 'description')->hideOnIndex(),
                 Text::make('SEO заголовок', 'seo_title')->hideOnIndex(),
