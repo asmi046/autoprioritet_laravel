@@ -57,6 +57,9 @@
     @include('svg-icons')
     @include("cart.cart-svg")
     <main id="main">
+        <x-mobile-catalog-menu></x-mobile-catalog-menu>
+        <x-mobile-bottom-menu></x-mobile-bottom-menu>
+
         <section class="top_info_section">
             <div class="container">
                 <div class="adres">
@@ -110,10 +113,7 @@
 
         <section class="menu_section">
             <div class="container">
-                <nav>
-                    <a href="#">Информация по подбору</a>
-                    <a href="{{ route('contacts') }}">Контакты</a>
-                </nav>
+                <x-menu.puncts></x-menu.puncts>
             </div>
         </section>
 

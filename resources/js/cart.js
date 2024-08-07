@@ -53,6 +53,23 @@ const counter_app = createApp({
 counter_app.use(store)
 counter_app.mount("#counter_app")
 
+const counter_app2 = createApp({
+    components:{
+        CartCounter
+    },
+
+    setup() {
+
+        const store = useStore()
+        store.dispatch('initialBascet');
+        store.dispatch('initialFavorites');
+
+    },
+})
+
+counter_app2.use(store)
+counter_app2.mount("#counter_app2")
+
 
 // const favorites_app = createApp({
 //     components:{

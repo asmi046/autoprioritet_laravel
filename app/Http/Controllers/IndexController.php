@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class IndexController extends Controller
 {
     public function index(Request $request) {
-        $blog_in_main = Blog::select()->take(5)->get();
+        $blog_in_main = Blog::orderBy('created_at', 'DESC')->take(5)->get();
         return view('index', ["blog_in_main" => $blog_in_main]);
     }
 }

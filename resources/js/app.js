@@ -1,5 +1,6 @@
 import './bootstrap';
 import IMask from 'imask';
+import './mobile_catalog_menu'
 
 const elements = document.querySelectorAll('input[type="tel"]');
 console.log(elements)
