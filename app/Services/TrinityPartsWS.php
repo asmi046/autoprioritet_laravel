@@ -11,7 +11,7 @@ namespace App\Services;
 class TrinityPartsWS {
     /** @var string  */
     protected $userCode;
-    protected $host = 'http://trinity-parts.ru/httpws/hs/';
+    protected $host = 'https://trinity-parts.ru/httpws/hs/';
     public    $error = '';
 
     public function __construct($userCode) {
