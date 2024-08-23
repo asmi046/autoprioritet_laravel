@@ -18,7 +18,7 @@
 
 <section class="inner_page_section">
     <div class="container">
-        <div class="blog_header" style="background-image: url({{ Storage::url('blog/'.$page->img) }})">
+        <div class="blog_header" style="background-image: url({{ Storage::url($page->img) }})">
             <div class="shadow"></div>
             <h1>{{ $page->title }}</h1>
         </div>
