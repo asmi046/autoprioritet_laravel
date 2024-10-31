@@ -65,7 +65,7 @@
             <td>
                 <div class="m_title">Цена</div>
                 <div class="content">
-                    {{$item['price']}}
+                    {{ $item['price'] }}
                 </div>
             </td>
             <td>

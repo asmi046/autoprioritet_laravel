@@ -69,7 +69,8 @@
                                 <td>
                                     <div class="m_title">Цена от</div>
                                     <div class="content">
-                                        {{ $item['price'] }}
+                                        {{-- {{ $item['price'] }} --}}
+                                        {{ round($item['price'] * 1.1, 2) }}
                                     </div>
                                 </td>
 
