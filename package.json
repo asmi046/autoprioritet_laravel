@@ -29,7 +29,8 @@
         "optimize": "ssh u2110123@server25.hosting.reg.ru \"cd www/xn--80aejla8abgjcqhb.xn--p1ai && /opt/php/8.1/bin/php artisan optimize\"",
         "optimize_all": "npm run optimize && npm run cache_clear && npm run cache_view && npm run cache_route && npm run cache_config",
         "orchid_user": "ssh u2110123@server25.hosting.reg.ru \"cd www/xn--80aejla8abgjcqhb.xn--p1ai && /opt/php/8.1/bin/php artisan orchid:admin admin asmi046@gmail.com 123\"",
-        "deploy_m": "vite build && npm run send_vite_build && npm run pull_rep && npm run optimize_all"
+        "chmode": "ssh u2110123@server25.hosting.reg.ru \"cd www/xn--80aejla8abgjcqhb.xn--p1ai/public/ && chmod -R 775 build\"",
+        "deploy_m": "vite build && npm run send_vite_build && npm run pull_rep && npm run optimize_all && npm run chmode"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.19",
