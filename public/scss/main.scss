@@ -111,6 +111,12 @@ section{
     }
 }
 
+.easy_lnk {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 @media (max-width: 1280px) {
     .container {
         width: 96%;

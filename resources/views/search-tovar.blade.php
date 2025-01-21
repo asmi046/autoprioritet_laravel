@@ -56,13 +56,13 @@
                                 <td>
                                     <div class="m_title">Бренд</div>
                                     <div class="content">
-                                        {{ $item['producer'] }}
+                                        <a class="easy_lnk" href="{{ route('search-tovar', [ 'brand' => $item['producer'], 'article' => $item['code'] ] ) }}">{{ $item['producer'] }}</a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="m_title">Артикул</div>
                                     <div class="content">
-                                        {{ $item['code'] }}
+                                        <a class="easy_lnk" href="{{ route('search-tovar', [ 'brand' => $item['producer'], 'article' => $item['code'] ] ) }}">{{ $item['code'] }}</a>
                                     </div>
                                 </td>
 
