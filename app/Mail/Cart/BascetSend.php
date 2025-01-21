@@ -19,9 +19,10 @@ class BascetSend extends Mailable
      *
      * @return void
      */
-    public function __construct($formData)
+    public function __construct($formData, $order_id)
     {
         $this->formData = $formData;
+        $this->order_id = $order_id;
     }
 
     /**
