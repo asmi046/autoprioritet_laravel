@@ -1,4 +1,4 @@
-<h1>Оформлен заказ {{ $order_id }}</h1>
+<h1>Оформлен заказ №{{ $order_id }}</h1>
 <p><strong>Имя:</strong> {{$formData['fio']}}</p>
 <p><strong>Телефон:</strong> {{$formData['phone']}}</p>
 <p><strong>E-mail:</strong> {{$formData['email']}}</p>
