@@ -95,7 +95,7 @@
 
             .mobile_logo {
                 display: block;
-                height: 36px;
+                height: 46px;
                 margin: auto 0 auto 0;
             }
         }
@@ -106,10 +106,13 @@
 
         .bascet_control .buscrt_in_head {
             padding: 0 10px;
+            height: 45px;
+            line-height: 45px;
         }
     }
 
     .menu_section {
+        padding: 2px 0;
         nav{
             display: none;
         }

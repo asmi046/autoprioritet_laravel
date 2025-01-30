@@ -90,13 +90,13 @@
             <div class="container">
                 <div class="search_line">
                     <a href="{{route('home')}}" class="logo">
-                        <img class="desctop_logo" src="{{asset('img/logo_white.svg')}}" alt="">
-                        <img class="mobile_logo" src="{{asset('img/logo_mini.svg')}}" alt="">
+                        <img class="desctop_logo" src="{{asset('img/logo_true.svg')}}" alt="">
+                        <img class="mobile_logo" src="{{asset('img/logo_true_mini.svg')}}" alt="">
                     </a>
 
                     <form action="{{ route('search') }}" method="GET" class="main_search_form">
                         <div class="search_input">
-                            <input name="search" type="text" value="{{ isset($_REQUEST['search'])?$_REQUEST['search']:"" }}" placeholder="Введите номер детали например: STHD29016L1">
+                            <input name="search" type="text" value="{{ isset($_REQUEST['search'])?$_REQUEST['search']:"" }}" placeholder="Введите номер детали">
                             <button type="submit"><i class="pi ap_lins"></i></button>
                         </div>
 
