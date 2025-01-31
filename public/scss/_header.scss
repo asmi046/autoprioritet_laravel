@@ -33,7 +33,7 @@
 
     .main_search_form {
         flex: 1;
-        margin: auto 30px 0 30px;
+        margin: auto 30px auto 30px;
     }
 
     .logo{
@@ -49,6 +49,7 @@
 
     .bascet_control {
         margin-top: auto;
+        margin-bottom: auto;
         .buscrt_in_head {
             display: inline-block;
             background-color: $main_color;
