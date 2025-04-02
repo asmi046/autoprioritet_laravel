@@ -11,6 +11,9 @@ class SearchQuery extends Model
 
     public $fillable=[
         'query',
-        'user_id'
+        'user_id',
+        'type',
+        'ip',
+        'brand',
     ];
 }

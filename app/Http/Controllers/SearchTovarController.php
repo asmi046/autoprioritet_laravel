@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SearchQuery;
+
 use Illuminate\Http\Request;
 
 use App\Services\TrinityPartsWS;
-
 use App\Services\ResultGroupService;
+use Illuminate\Support\Facades\Auth;
 
 class SearchTovarController extends Controller
 {
@@ -18,6 +20,14 @@ class SearchTovarController extends Controller
         $serviceResult = new ResultGroupService();
         $service = new TrinityPartsWS(config('trinity.trinity_key'));
         $result = [];
+
+        SearchQuery::create([
+            'query' => $article,
+            'ip' => $request->ip(),
+            'type' => 'Бренд',
+            'brand' => $brand,
+            'user_id' => (Auth::check())?Auth::id():NULL
+        ]);
 
         $result = $service->searchItems($article, $brand, includeStocks:'1', showAnalogues:true);
 
