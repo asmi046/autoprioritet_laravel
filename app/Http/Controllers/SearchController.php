@@ -18,6 +18,7 @@ class SearchController extends Controller
             'query' => $search_str,
             'ip' => $request->ip(),
             'useragent' => $request->userAgent(),
+            'headers' => json_encode($request->header()),
             'user_id' => (Auth::check())?Auth::id():NULL
         ]);
 
