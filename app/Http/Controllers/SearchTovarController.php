@@ -26,6 +26,7 @@ class SearchTovarController extends Controller
             'ip' => $request->ip(),
             'type' => 'Бренд',
             'brand' => $brand,
+            'useragent' => $request->userAgent(),
             'user_id' => (Auth::check())?Auth::id():NULL
         ]);
 

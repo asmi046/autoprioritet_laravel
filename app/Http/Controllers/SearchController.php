@@ -17,6 +17,7 @@ class SearchController extends Controller
         SearchQuery::create([
             'query' => $search_str,
             'ip' => $request->ip(),
+            'useragent' => $request->userAgent(),
             'user_id' => (Auth::check())?Auth::id():NULL
         ]);
 

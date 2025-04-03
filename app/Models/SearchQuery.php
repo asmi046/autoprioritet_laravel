@@ -15,5 +15,6 @@ class SearchQuery extends Model
         'type',
         'ip',
         'brand',
+        'useragent'
     ];
 }
