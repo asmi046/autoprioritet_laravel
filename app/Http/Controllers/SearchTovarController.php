@@ -27,6 +27,7 @@ class SearchTovarController extends Controller
             'type' => 'Бренд',
             'brand' => $brand,
             'useragent' => $request->userAgent(),
+            'headers' => json_encode($request->header()),
             'user_id' => (Auth::check())?Auth::id():NULL
         ]);
 
