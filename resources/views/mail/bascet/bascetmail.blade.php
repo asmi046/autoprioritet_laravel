@@ -22,7 +22,7 @@
                         <span style="font-size:12px">Артикул: {{$item["tovar_content"]["code"]}}</span>
                     </td>
                     <td style="padding: 5px; border-bottom:1px solid black; border-right:1px solid black;">{{$item["tovar_content"]["producer"]}}</td>
-                    <td style="padding: 5px; border-bottom:1px solid black; border-right:1px solid black;">{{$item["tovar_content"]["stock"]}}</td>
+                    <td style="padding: 5px; border-bottom:1px solid black; border-right:1px solid black;">{{ clear_trinity($item["tovar_content"]["stock"]) }}</td>
                     <td style="padding: 5px; border-bottom:1px solid black; border-right:1px solid black;">{{$item["tovar_content"]["deliverydays"]}}</td>
                     <td style="padding: 5px; border-bottom:1px solid black; border-right:1px solid black;">{{$item["price"]}} ₽</td>
                     <td style="padding: 5px; border-bottom:1px solid black; border-right:1px solid black;">{{$item["quentity"]}}</td>
