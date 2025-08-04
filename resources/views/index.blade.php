@@ -10,7 +10,7 @@
 
 @section('main')
 
-    <x-last-search></x-last-search>
+    {{-- <x-last-search></x-last-search> --}}
 
     <section class="materialse_section">
         <div class="container">

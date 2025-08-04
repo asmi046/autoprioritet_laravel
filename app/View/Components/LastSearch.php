@@ -15,7 +15,7 @@ class LastSearch extends Component
     public $search_articles;
     public function __construct()
     {
-        $this->search_articles = SearchQuery::inRandomOrder()->take(16)->get();
+        // $this->search_articles = SearchQuery::inRandomOrder()->take(16)->get();
     }
 
     /**
